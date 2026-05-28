@@ -331,8 +331,8 @@
       msg += '• ' + item.name + cat + ' × ' + item.qty + ' = ₹' + (item.price * item.qty).toFixed(2) + '\n';
     });
 
-    if (userLocation) {
-      msg += '\n📍 Delivery From: ' + SHOP_DELIVERY_ORIGIN;
+    if (userLocation) 
+    {
       msg += '\n📏 Distance: ' + (distanceMeters / 1000).toFixed(2) + ' km';
     }
 
