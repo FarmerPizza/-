@@ -65,6 +65,10 @@
           if (Object.prototype.hasOwnProperty.call(entry, 'tags')) cleaned.tags = entry.tags;
           if (Object.prototype.hasOwnProperty.call(entry, 'parent')) cleaned.parent = entry.parent;
           if (Object.prototype.hasOwnProperty.call(entry, 'qty')) cleaned.qty = entry.qty;
+          /* SURGICAL FIX: Allow upgrades to be saved in memory */
+          if (Object.prototype.hasOwnProperty.call(entry, 'extraCheese')) cleaned.extraCheese = entry.extraCheese;
+          if (Object.prototype.hasOwnProperty.call(entry, 'cheeseBurst')) cleaned.cheeseBurst = entry.cheeseBurst; 
+         
           if (cleaned.id && cleaned.name && typeof cleaned.price === 'number') {
             safe.push(cleaned);
           }
@@ -78,6 +82,17 @@
 
   function saveCart(cart) {
     sessionStorage.setItem('farmer_pizza_cart', JSON.stringify(cart));
+  }
+   // Function to handle Cheese Upgrades
+  function setPizzaUpgrade(id, upgradeType, priceValue) {
+    var cart = getCart(); // Uses your safe getCart function
+    var itemIndex = cart.findIndex(function(c) { return c.id === id; });
+    
+    if (itemIndex > -1) {
+      cart[itemIndex][upgradeType] = parseInt(priceValue) || 0;
+      saveCart(cart); // Uses your safe saveCart function
+      updateCartUI(); // Triggers your correct UI render function
+    }
   }
 
   // ============================================
@@ -349,6 +364,11 @@
   // ============================================
 
   function createCartItemElement(item) {
+     /* SURGICAL FIX: Calculate base price + cheese upgrades */
+    var extraC = item.extraCheese || 0;
+    var burstC = item.cheeseBurst || 0;
+    var itemTotal = item.price + extraC + burstC;
+     
     var lineTotal = (item.price * item.qty).toFixed(2);
     var cartItemEl = document.createElement('div');
     cartItemEl.classList.add('cart-item');
@@ -376,6 +396,30 @@
     tagsDiv.className = 'cart-item-tags';
     tagsDiv.textContent = item.tags;
     infoDiv.appendChild(tagsDiv);
+     /* SURGICAL FIX: Inject Pizza Upgrades */
+    if (item.parent === 'Pizza' || item.category === 'Pizza' || (item.tags && item.tags.indexOf('pizza') !== -1)) {
+      var upgradesDiv = document.createElement('div');
+      upgradesDiv.className = 'cart-item-upgrades';
+      upgradesDiv.innerHTML =
+        '<select class="upgrade-select">' +
+          '<option value="0" ' + (!item.extraCheese ? 'selected' : '') + '>+ Extra Cheese</option>' +
+          '<option value="30" ' + (item.extraCheese === 30 ? 'selected' : '') + '>Small (+₹30)</option>' +
+          '<option value="40" ' + (item.extraCheese === 40 ? 'selected' : '') + '>Medium (+₹40)</option>' +
+          '<option value="50" ' + (item.extraCheese === 50 ? 'selected' : '') + '>Large (+₹50)</option>' +
+        '</select>' +
+        '<select class="upgrade-select">' +
+          '<option value="0" ' + (!item.cheeseBurst ? 'selected' : '') + '>+ Cheese Burst</option>' +
+          '<option value="30" ' + (item.cheeseBurst === 30 ? 'selected' : '') + '>Small (+₹30)</option>' +
+          '<option value="50" ' + (item.cheeseBurst === 50 ? 'selected' : '') + '>Medium (+₹50)</option>' +
+          '<option value="100" ' + (item.cheeseBurst === 100 ? 'selected' : '') + '>Large (+₹100)</option>' +
+        '</select>';
+
+      var selects = upgradesDiv.querySelectorAll('select');
+      var safeItemId = String(item.id);
+      selects[0].addEventListener('change', function(e) { setPizzaUpgrade(safeItemId, 'extraCheese', e.target.value); });
+      selects[1].addEventListener('change', function(e) { setPizzaUpgrade(safeItemId, 'cheeseBurst', e.target.value); });
+      infoDiv.appendChild(upgradesDiv);
+    }
 
     // Qty selector
     var qtyDiv = document.createElement('div');
@@ -483,7 +527,11 @@
 
     // --- Subtotal ---
     var subtotal = 0;
-    cart.forEach(function (entry) { subtotal += entry.price * entry.qty; });
+    cart.forEach(function (entry) { 
+      var ext = entry.extraCheese || 0;
+      var brst = entry.cheeseBurst || 0;
+      subtotal += (entry.price + ext + brst) * entry.qty; 
+    });
 
     // --- Delivery Progress ---
     if (deliveryProgress) {
