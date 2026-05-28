@@ -2001,8 +2001,8 @@ body.nav-open {
   bottom: -18px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 44px;                         /* Optimal touch area for selecting items */
-  height: 44px;
+  width: 50px;                         /* Optimal touch area for selecting items */
+  height: 50px;
   background-color: transparent;       /* SURGICAL FIX: Completely removes the black dot background */
   color: var(--deep-charcoal);         /* Matches the lookbook typography color scheme */
   display: flex;
@@ -2026,7 +2026,7 @@ body.nav-open {
 .catalog-card-action-btn svg {
   stroke: var(--deep-charcoal);        /* SURGICAL FIX: Colors the line logo charcoal against the cards */
   fill: none;
-  stroke-width: 1.8;                   /* Cleans up vector path weight for detailed display */
+  stroke-width: 2.5;                   /* Cleans up vector path weight for detailed display */
   width: 24px;                         /* Explicitly scales the graphic outlines */
   height: 24px;
   transition: stroke var(--duration-fast) var(--ease-smooth), 
