@@ -2513,3 +2513,68 @@ body.nav-open {
   background-color: #9a140c;
   transform: translateY(-2px);
 }
+
+
+/* ============================================
+   FOOTER ABOUT / STORY BOX
+   ============================================ */
+.footer-about-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto var(--space-5) auto; /* Centers it and pushes the Farmer Pizza logo down */
+  text-align: left;
+  background-color: #fff;
+  padding: var(--space-4);
+  border: 1px solid var(--surface-container-highest);
+  border-radius: 0px; /* Sharp corners for brand consistency */
+  box-shadow: 0 4px 12px rgba(28, 28, 28, 0.02);
+}
+
+.footer-about-text {
+  flex: 1;
+}
+
+.footer-about-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--pizza-red);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.footer-about-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.footer-about-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border: 1px solid var(--deep-charcoal);
+}
+
+.footer-about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile Responsiveness: Stacks the image on top of the text on small screens */
+@media (max-width: 480px) {
+  .footer-about-box {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: var(--space-3);
+  }
+  .footer-about-image {
+    width: 80px;
+    height: 80px;
+  }
+}
