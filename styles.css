@@ -2409,5 +2409,32 @@ body.nav-open {
   color: var(--pizza-red);
   letter-spacing: 0.05em;
 }
+/* ============================================
+   CART ITEM UPGRADES (PIZZA)
+   ============================================ */
+.cart-item-upgrades {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
 
+.upgrade-select {
+  background-color: var(--surface-gray);
+  color: var(--deep-charcoal);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0px; /* Brand signature sharp edges */
+  padding: 4px 6px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  outline: none;
+  flex: 1;
+  cursor: pointer;
+  transition: border-color var(--duration-fast);
+}
+
+.upgrade-select:focus {
+  border-color: var(--pizza-red);
+}
 
