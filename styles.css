@@ -2516,65 +2516,77 @@ body.nav-open {
 
 
 /* ============================================
-   FOOTER ABOUT / STORY BOX
+   BRAND STORY FULL-WIDTH BANNER
    ============================================ */
-.footer-about-box {
+.brand-story-banner {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  max-width: 600px;
-  margin: 0 auto var(--space-5) auto; /* Centers it and pushes the Farmer Pizza logo down */
-  text-align: left;
-  background-color: #fff;
-  padding: var(--space-4);
-  border: 1px solid var(--surface-container-highest);
-  border-radius: 0px; /* Sharp corners for brand consistency */
-  box-shadow: 0 4px 12px rgba(28, 28, 28, 0.02);
+  width: 100%;
+  min-height: 50vh; /* Forces the section to cover half the screen height */
+  background-color: var(--deep-charcoal);
+  border-top: 2px solid var(--pizza-red);
+  overflow: hidden;
 }
 
-.footer-about-text {
-  flex: 1;
+.brand-story-text {
+  flex: 1; /* Takes up the left half */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-5) var(--space-5);
 }
 
-.footer-about-title {
+.brand-story-headline {
   font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--pizza-red);
+  font-size: 44px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  color: var(--pizza-red);
+  margin-bottom: var(--space-2);
   letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
-.footer-about-desc {
+.brand-story-subtext {
   font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--secondary);
+  font-size: 16px;
   line-height: 1.6;
+  color: var(--dough-beige);
 }
 
-.footer-about-image {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  border: 1px solid var(--deep-charcoal);
+.brand-story-photo {
+  flex: 1; /* Takes up the right half */
+  position: relative;
 }
 
-.footer-about-image img {
+.brand-story-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the photo stretches to fill the whole right side without distorting */
 }
 
-/* Mobile Responsiveness: Stacks the image on top of the text on small screens */
-@media (max-width: 480px) {
-  .footer-about-box {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: var(--space-3);
+/* Mobile Responsiveness: Keeps the strict Left/Right layout and 50vh height */
+@media (max-width: 768px) {
+  .brand-story-banner {
+    flex-direction: row; 
+    min-height: 50vh; 
   }
-  .footer-about-image {
-    width: 80px;
-    height: 80px;
+  
+  .brand-story-text {
+    flex: 0 0 55%; /* Gives the text slightly more room so it's readable on small phones */
+    padding: var(--space-3) var(--margin-mobile);
+  }
+  
+  .brand-story-photo {
+    flex: 0 0 45%; /* Image covers the remaining right side */
+  }
+  
+  .brand-story-headline {
+    font-size: 24px;
+  }
+  
+  .brand-story-subtext {
+    font-size: 12px;
+    line-height: 1.4;
   }
 }
