@@ -2001,21 +2001,20 @@ body.nav-open {
   bottom: -18px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 42px;                         /* Increased tap target for touch precision */
-  height: 42px;
-  border-radius: 0px;                  /* SURGICAL FIX: Changes the round dot to a sharp brand edge */
-  background-color: var(--pizza-red);  /* SURGICAL FIX: Switches flat black to primary Pizza Red */
-  color: #fff;
+  width: 44px;                         /* Optimal touch area for selecting items */
+  height: 44px;
+  background-color: transparent;       /* SURGICAL FIX: Completely removes the black dot background */
+  color: var(--deep-charcoal);         /* Matches the lookbook typography color scheme */
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--deep-charcoal); /* Adds lookbook-style high-contrast line edge */
+  border: none;                        /* Removes all surrounding lines */
+  border-radius: 0px;
+  box-shadow: none;                    /* SURGICAL FIX: Strips away the container shadow */
   cursor: pointer;
   z-index: 3;
-  box-shadow: 0 4px 10px rgba(28, 28, 28, 0.2);
-  transition: background-color var(--duration-fast) var(--ease-smooth),
-              transform var(--duration-fast) var(--ease-spring),
-              box-shadow var(--duration-fast) var(--ease-smooth);
+  transition: color var(--duration-fast) var(--ease-smooth),
+              transform var(--duration-fast) var(--ease-spring);
 }
 
 .catalog-card-action-btn:hover {
@@ -2025,16 +2024,19 @@ body.nav-open {
 }
 
 .catalog-card-action-btn svg {
-  stroke: #ffffff;                    /* SURGICAL FIX: Forces the vector paths to be clean white */
+  stroke: var(--deep-charcoal);        /* SURGICAL FIX: Colors the line logo charcoal against the cards */
   fill: none;
-  stroke-width: 1.8;                  /* SURGICAL FIX: Thins the lines so the cart details are clear */
-  width: 20px;                        /* Scales the embedded layout proportionally */
-  height: 20px;
-  transition: transform var(--duration-fast);
+  stroke-width: 1.8;                   /* Cleans up vector path weight for detailed display */
+  width: 24px;                         /* Explicitly scales the graphic outlines */
+  height: 24px;
+  transition: stroke var(--duration-fast) var(--ease-smooth), 
+              transform var(--duration-fast) var(--ease-smooth);
 }
 
-.catalog-card-action-btn:active {
-  transform: translateX(-50%) scale(0.95);
+/* Switches the standalone logo color to brand red upon active touch or hover click */
+.catalog-card-action-btn:hover svg,
+.catalog-card-action-btn:active svg {
+  stroke: var(--pizza-red);            /* Visual confirmation that product is being processed */
 }
 
 /* Bottom Bar (Floating Capsule Style) */
