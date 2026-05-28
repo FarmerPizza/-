@@ -513,8 +513,34 @@
       <p class="combo-card-desc">3 Pizzas of your choice + 2 Cold Drinks (500ml). Great for gatherings.</p>
       <!-- # change combo-2-cta-text here -->
       <button class="btn-combo" data-combo="party-pack">Select Combo</button>
-    </div>
-  </section>
+    </div>
+  </section>
+
+  ```
+
+**Surgically replace it with this:**
+```html
+            <button class="btn-combo" data-combo="party-pack">Select Combo</button>
+    </div>
+  </section>
+
+    <section class="discount-section reveal" id="discount-section">
+    <div class="discount-container">
+      <h2 class="discount-title">Join the VIP Club</h2>
+      <p class="discount-subtitle">Get exclusive combo deals and secret discounts delivered straight to your WhatsApp.</p>
+      
+      <form class="discount-form" id="discount-form">
+        <input type="text" id="vip-name" placeholder="Full Name" required />
+        <input type="tel" id="vip-phone" placeholder="WhatsApp Number" required />
+        <input type="text" id="vip-address" placeholder="Delivery Address" required />
+        <button type="submit" class="btn-discount">Get VIP Discounts</button>
+      </form>
+    </div>
+  </section>
+
+  ```
+
+*(Don't forget to also add the **CSS block** to the bottom of your `styles.css` and the **JavaScript logic block** to the bottom of your `script.js` provided in the previous message so the button actually formats and sends the WhatsApp message!)*
 
   <!-- ============================================
        FOOTER
