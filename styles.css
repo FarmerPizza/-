@@ -2001,8 +2001,8 @@ body.nav-open {
   bottom: -18px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 50px;                         /* Optimal touch area for selecting items */
-  height: 50px;
+  width: 60px;                         /* Optimal touch area for selecting items */
+  height: 60px;
   background-color: transparent;       /* SURGICAL FIX: Completely removes the black dot background */
   color: var(--deep-charcoal);         /* Matches the lookbook typography color scheme */
   display: flex;
@@ -2024,13 +2024,12 @@ body.nav-open {
 }
 
 .catalog-card-action-btn svg {
-  stroke: var(--deep-charcoal);        /* SURGICAL FIX: Colors the line logo charcoal against the cards */
+  stroke: currentColor;
   fill: none;
-  stroke-width: 2.5;                   /* Cleans up vector path weight for detailed display */
-  width: 24px;                         /* Explicitly scales the graphic outlines */
-  height: 24px;
-  transition: stroke var(--duration-fast) var(--ease-smooth), 
-              transform var(--duration-fast) var(--ease-smooth);
+  stroke-width: 2.5;
+  width: 30px;                          /* SURGICAL FIX: Forces the plus sign vector to scale up inside the circle */
+  height: 30px;                         /* SURGICAL FIX: Forces the plus sign vector to scale up inside the circle */
+  transition: transform var(--duration-fast);
 }
 
 /* Switches the standalone logo color to brand red upon active touch or hover click */
