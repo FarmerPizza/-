@@ -18,6 +18,7 @@
   var FREE_DELIVERY_THRESHOLD = 299;
 
   // # change shop-location here (latitude, longitude)
+  // Coordinates extracted from: https://maps.app.goo.gl/hPDTuCM2B3fGc8yQ8?g_st=ac
   var SHOP_LOCATION = { lat: 29.3279995, lng: 77.851953 };
 
   // # change delivery-rate-per-meter here
@@ -332,7 +333,6 @@
 
     if (userLocation) {
       msg += '\n📍 Delivery From: ' + SHOP_DELIVERY_ORIGIN;
-      msg += '\n📍 Delivery To: https://www.google.com/maps/search/?api=1&query=' + userLocation.lat + ',' + userLocation.lng;
       msg += '\n📏 Distance: ' + (distanceMeters / 1000).toFixed(2) + ' km';
     }
 
