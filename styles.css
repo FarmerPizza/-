@@ -2001,15 +2001,15 @@ body.nav-open {
   bottom: -18px;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--deep-charcoal);
+  width: 42px;                         /* Increased tap target for touch precision */
+  height: 42px;
+  border-radius: 0px;                  /* SURGICAL FIX: Changes the round dot to a sharp brand edge */
+  background-color: var(--pizza-red);  /* SURGICAL FIX: Switches flat black to primary Pizza Red */
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--deep-charcoal); /* Adds lookbook-style high-contrast line edge */
   cursor: pointer;
   z-index: 3;
   box-shadow: 0 4px 10px rgba(28, 28, 28, 0.2);
@@ -2025,9 +2025,11 @@ body.nav-open {
 }
 
 .catalog-card-action-btn svg {
-  stroke: currentColor;
+  stroke: #ffffff;                    /* SURGICAL FIX: Forces the vector paths to be clean white */
   fill: none;
-  stroke-width: 2.5;
+  stroke-width: 1.8;                  /* SURGICAL FIX: Thins the lines so the cart details are clear */
+  width: 20px;                        /* Scales the embedded layout proportionally */
+  height: 20px;
   transition: transform var(--duration-fast);
 }
 
