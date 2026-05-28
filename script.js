@@ -29,6 +29,9 @@
   // # change shop-name here
   var SHOP_NAME = 'Farmer Pizza';
 
+  // # change shop-delivery-origin here (Google Maps link for delivery origin)
+  var SHOP_DELIVERY_ORIGIN = 'https://maps.app.goo.gl/hPDTuCM2B3fGc8yQ8?g_st=ac';
+
   // ============================================
   // 2. CART STATE (sessionStorage)
   // ============================================
@@ -328,7 +331,8 @@
     });
 
     if (userLocation) {
-      msg += '\n📍 Location: https://www.google.com/maps/search/?api=1&query=' + userLocation.lat + ',' + userLocation.lng;
+      msg += '\n📍 Delivery From: ' + SHOP_DELIVERY_ORIGIN;
+      msg += '\n📍 Delivery To: https://www.google.com/maps/search/?api=1&query=' + userLocation.lat + ',' + userLocation.lng;
       msg += '\n📏 Distance: ' + (distanceMeters / 1000).toFixed(2) + ' km';
     }
 
