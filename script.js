@@ -835,5 +835,44 @@
   // 18. INITIALIZE — Load cart from sessionStorage
   // ============================================
   updateCartUI();
+   // ============================================
+  // 20. VIP DISCOUNT FORM (WHATSAPP SUBMIT)
+  // ============================================
+  var discountForm = document.getElementById('discount-form');
+  
+  if (discountForm) {
+    discountForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents the page from refreshing
+
+      // Grab the user data
+      var name = document.getElementById('vip-name').value.trim();
+      var phone = document.getElementById('vip-phone').value.trim();
+      var address = document.getElementById('vip-address').value.trim();
+
+      // Format the WhatsApp message beautifully
+      var msg = "Hello Farmer Pizza! 🍕\n\nI want to join the VIP Club for exclusive discounts.\n\n";
+      msg += "*Name:* " + name + "\n";
+      msg += "*WhatsApp No:* " + phone + "\n";
+      msg += "*Delivery Address:* " + address + "\n\n";
+      msg += "Please add me to your VIP list!";
+
+      // Send to the owner's WhatsApp
+      var waLink = 'https://wa.me/' + PHONE_NUMBER + '?text=' + encodeURIComponent(msg);
+      window.open(waLink, '_blank');
+
+      // Visual feedback: Change button text to green checkmark
+      var btn = discountForm.querySelector('.btn-discount');
+      var oldText = btn.textContent;
+      btn.textContent = "✓ Opening WhatsApp...";
+      btn.style.backgroundColor = "#25D366"; // WhatsApp Green
+
+      // Reset the form and button after 3 seconds
+      setTimeout(function() {
+        btn.textContent = oldText;
+        btn.style.backgroundColor = "var(--pizza-red)";
+        discountForm.reset();
+      }, 3000);
+    });
+  }
 
 })();
