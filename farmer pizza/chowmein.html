@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- # change page-title here -->
+  <title>Chowmein — Farmer Pizza</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="header-btn" id="menu-toggle-btn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <a href="main.html" class="header-logo">Farmer Pizza</a>
+      <div class="header-right">
+        <button class="header-btn" id="cart-toggle-btn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEFT NAV MENU -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <aside class="nav-sidebar" id="nav-sidebar">
+    <div class="nav-sidebar-header">
+      <div><div class="nav-sidebar-logo">Shop</div><div class="nav-sidebar-subtitle">Gourmet Selection</div></div>
+      <button class="nav-sidebar-close" id="nav-close-btn" aria-label="Close menu"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <nav class="nav-sidebar-items">
+      <a href="main.html" class="nav-sidebar-item"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>See All Products</span></a>
+      <a href="pizza.html" class="nav-sidebar-item"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12l10 10 10-10c0-5.52-4.48-10-10-10z"/><circle cx="9" cy="9" r="1" fill="currentColor"/></svg></span><span>Pizza</span></a>
+      <a href="burger.html" class="nav-sidebar-item"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M4 15h16a1 1 0 011 1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a1 1 0 011-1z"/><path d="M5 11c-1-5 3-8 7-8s8 3 7 8"/><path d="M4 11h16"/></svg></span><span>Burger</span></a>
+      <a href="chowmein.html" class="nav-sidebar-item active"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span><span>Chowmein</span></a>
+      <a href="chilli-potato.html" class="nav-sidebar-item"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><ellipse cx="12" cy="14" rx="8" ry="6"/><path d="M12 8V3"/></svg></span><span>Chilli Potato</span></a>
+      <a href="sides.html" class="nav-sidebar-item"><span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M7 3v4a1 1 0 001 1h0a1 1 0 001-1V3"/><path d="M15 3v4a1 1 0 001 1h0a1 1 0 001-1V3"/><path d="M7 8c0 6-2 8-2 13h14c0-5-2-7-2-13"/></svg></span><span>Sides</span></a>
+      <a href="shake.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2v20M17 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg></span>
+        <span>Shake</span>
+      </a>
+      <a href="drink.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2v20M17 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg></span>
+        <span>Drink</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CATEGORY CIRCLES -->
+  <nav class="category-nav"><div class="category-scroll">
+    <a href="pizza.html" class="category-item"><div class="category-circle"><img src="assets/cat-pizza.png" alt="Pizza" /></div><span class="category-label">Pizza</span></a>
+    <a href="burger.html" class="category-item"><div class="category-circle"><img src="assets/cat-burger.png" alt="Burger" /></div><span class="category-label">Burger</span></a>
+    <a href="chowmein.html" class="category-item active"><div class="category-circle"><img src="assets/cat-chowmein.png" alt="Chowmein" /></div><span class="category-label">Chowmein</span></a>
+    <a href="chilli-potato.html" class="category-item"><div class="category-circle"><img src="assets/cat-chilli-potato.png" alt="Chilli Potato" /></div><span class="category-label">Chilli Potato</span></a>
+    <a href="sides.html" class="category-item"><div class="category-circle"><img src="assets/cat-sides.png" alt="Sides" /></div><span class="category-label">Sides</span></a>
+    <a href="shake.html" class="category-item"><div class="category-circle"><img src="assets/cat-shakes.png" alt="Shake" /></div><span class="category-label">Shake</span></a>
+    <a href="drink.html" class="category-item"><div class="category-circle"><img src="assets/cat-drink.png" alt="Drink" /></div><span class="category-label">Drink</span></a>
+  </div></nav>
+
+  <!-- PAGE CONTENT -->
+  <!-- PAGE CONTENT — PREMIUM CATALOG (FURNITURE STYLE) -->
+  <main class="catalog-page-wrapper">
+    <div class="catalog-screen">
+      <!-- Phone Mockup Status Bar -->
+      <div class="mockup-status-bar">
+        <span class="status-time">9:41</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M17 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-1 12H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V7h8v2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scrollable Catalog Area -->
+      <div class="catalog-content-scroll">
+        <!-- Header -->
+        <div class="catalog-top-header">
+          <!-- # change catalog-title here -->
+          <h1 class="catalog-main-title">Chowmein</h1>
+          <button class="catalog-header-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="catalog-search-section">
+          <div class="catalog-search-wrapper">
+            <svg class="catalog-search-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" placeholder="Search noodles..." class="catalog-search-input" id="catalog-search-input" />
+          </div>
+          <button class="catalog-filter-btn" aria-label="Filters">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            <span class="filter-count">1</span>
+          </button>
+        </div>
+
+        <!-- Subcategory Filter Chips -->
+        <div class="catalog-chips-container">
+          <div class="catalog-chips-list">
+            <button class="catalog-chip active" data-filter="all">All</button>
+            <button class="catalog-chip" data-filter="classic">Classic</button>
+            <button class="catalog-chip" data-filter="veggie">Veggie</button>
+            <button class="catalog-chip" data-filter="spicy">Spicy</button>
+            <button class="catalog-chip" data-filter="paneer">Paneer</button>
+            <button class="catalog-chip" data-filter="egg">Egg</button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="catalog-grid" id="catalog-products-grid">
+          
+          <!-- Product 1: Veg Chowmein -->
+          <!-- # change chowmein-1 details here -->
+          <div class="catalog-card" data-tags="classic veggie">
+            <span class="catalog-card-badge">Fresh</span>
+            <div class="catalog-card-media">
+              <img src="assets/chowmein-veg.png" alt="Veg Chowmein" />
+            </div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Veg Chowmein</h3>
+              <span class="catalog-card-price">₹60.00</span>
+            </div>
+            <button class="catalog-card-action-btn btn-add-cart" 
+                    data-id="chowmein_veg_chowmein" 
+                    data-name="Veg Chowmein" 
+                    data-price="60.00" 
+                    data-image="assets/chowmein-veg.png" 
+                    data-tags="classic, veggie"
+                    data-category="Chowmein"
+                    aria-label="Add Veg Chowmein to cart">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Product 2: Kurkure Paneer -->
+          <!-- # change chowmein-2 details here -->
+          <div class="catalog-card" data-tags="paneer spicy premium veggie">
+            <span class="catalog-card-badge">Hot</span>
+            <div class="catalog-card-media">
+              <img src="assets/chowmein-paneer.png" alt="Kurkure Paneer" />
+            </div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Kurkure Paneer</h3>
+              <span class="catalog-card-price">₹130.00</span>
+            </div>
+            <button class="catalog-card-action-btn btn-add-cart" 
+                    data-id="chowmein_kurkure_paneer" 
+                    data-name="Kurkure Paneer" 
+                    data-price="130.00" 
+                    data-image="assets/chowmein-paneer.png" 
+                    data-tags="paneer, spicy, premium, veggie"
+                    data-category="Chowmein"
+                    aria-label="Add Kurkure Paneer to cart">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Product 3: Veg Kurkure -->
+          <!-- # change chowmein-3 details here -->
+          <div class="catalog-card" data-tags="classic spicy veggie">
+            <span class="catalog-card-badge">New</span>
+            <div class="catalog-card-media">
+              <img src="assets/chowmein-egg.png" alt="Veg Kurkure" />
+            </div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Veg Kurkure</h3>
+              <span class="catalog-card-price">₹80.00</span>
+            </div>
+            <button class="catalog-card-action-btn btn-add-cart" 
+                    data-id="chowmein_veg_kurkure" 
+                    data-name="Veg Kurkure" 
+                    data-price="80.00" 
+                    data-image="assets/chowmein-egg.png" 
+                    data-tags="classic, spicy, veggie"
+                    data-category="Chowmein"
+                    aria-label="Add Veg Kurkure to cart">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Product 4: Veg Momos -->
+          <!-- # change chowmein-4 details here -->
+          <div class="catalog-card" data-tags="classic veggie">
+            <span class="catalog-card-badge sale">-5%</span>
+            <div class="catalog-card-media">
+              <img src="assets/chowmein-hakka.png" alt="Veg Momos" />
+            </div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Veg Momos (8 Pcs)</h3>
+              <span class="catalog-card-price">₹50.00</span>
+            </div>
+            <button class="catalog-card-action-btn btn-add-cart" 
+                    data-id="chowmein_veg_momos" 
+                    data-name="Veg Momos" 
+                    data-price="50.00" 
+                    data-image="assets/chowmein-hakka.png" 
+                    data-tags="classic, veggie"
+                    data-category="Chowmein"
+                    aria-label="Add Veg Momos to cart">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Product 5: Paneer Momos (Steam) -->
+          <!-- # change chowmein-5 details here -->
+          <div class="catalog-card" data-tags="paneer premium veggie">
+            <span class="catalog-card-badge">Best</span>
+            <div class="catalog-card-media">
+              <img src="assets/chowmein-hakka.png" alt="Paneer Momos" />
+            </div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Paneer Momos Steam</h3>
+              <span class="catalog-card-price">₹100.00</span>
+            </div>
+            <button class="catalog-card-action-btn btn-add-cart" 
+                    data-id="chowmein_paneer_momos_steam" 
+                    data-name="Paneer Momos (Steam)" 
+                    data-price="100.00" 
+                    data-image="assets/chowmein-hakka.png" 
+                    data-tags="paneer, premium, veggie"
+                    data-category="Chowmein"
+                    aria-label="Add Paneer Momos to cart">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Floating Bottom Capsule Bar -->
+      <div class="catalog-bottom-bar">
+        <a href="main.html" class="catalog-home-btn" aria-label="Go to Home">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </a>
+        <div class="catalog-bottom-capsule">
+          <button class="catalog-capsule-btn" id="bottom-wishlist-btn" aria-label="Favorites list">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+          <button class="catalog-capsule-btn" id="bottom-cart-btn" aria-label="Shopping Cart">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="capsule-badge" id="capsule-cart-badge" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer"><div class="footer-logo">Farmer Pizza</div><nav class="footer-links"><a href="#" class="footer-link">Privacy Policy</a><a href="#" class="footer-link">Terms of Service</a><a href="#" class="footer-link">Location</a><a href="#" class="footer-link">Contact Us</a></nav><p class="footer-copy">© 2024 Farmer Pizza. Artisanal Craft.</p></footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header"><span class="cart-header-title">Shopping Cart</span><button class="cart-close-btn" id="cart-close-btn"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-delivery-nudge"><div class="delivery-nudge-text"><span class="icon">🚗</span><span id="delivery-nudge-label">Use <strong>₹299.00</strong> more and get free delivery</span></div><div class="delivery-progress-bar"><div class="delivery-progress-fill" id="delivery-progress" style="width: 0%"></div></div></div>
+    <div class="cart-items" id="cart-items"><div class="cart-empty" id="cart-empty"><div class="cart-empty-icon">🛒</div><p class="cart-empty-text">Your cart is empty</p></div></div>
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-location-section" id="cart-location-section"><button class="btn-grant-location" id="btn-grant-location">📍 Share Location for Delivery</button><div class="cart-location-status" id="cart-location-status"></div></div>
+      <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-value" id="cart-subtotal">₹0.00</span></div>
+      <div class="cart-summary-row"><span class="cart-summary-label">Delivery</span><span class="cart-summary-value" id="cart-delivery">Share location above</span></div>
+      <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-value" id="cart-total">₹0.00</span></div>
+      <a href="#" class="btn-whatsapp-order disabled" id="btn-whatsapp-order" target="_blank">📲 Order via WhatsApp</a>
+      <a href="main.html" class="btn-continue-shopping">← Continue Shopping</a>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

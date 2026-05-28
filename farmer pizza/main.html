@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- # change page-title here -->
+  <title>Farmer Pizza — Artisanal Craft Pizza</title>
+
+  <!-- # change meta-description here -->
+  <meta name="description"
+    content="Premium artisanal pizzas crafted with the finest ingredients. Order gourmet pepperoni, garden veggie, classic cheese and more." />
+
+  <!-- # change favicon-path here -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts (Anton + Hanken Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <!-- Hamburger Menu Button -->
+        <button class="header-btn" id="menu-toggle-btn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- # change shop-name here -->
+      <a href="main.html" class="header-logo">Farmer Pizza</a>
+
+
+      <!-- Cart Button -->
+      <button class="header-btn" id="cart-toggle-btn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+    </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       LEFT NAV MENU (SLIDING SIDEBAR)
+       ============================================ -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <aside class="nav-sidebar" id="nav-sidebar" aria-label="Shop navigation">
+    <div class="nav-sidebar-header">
+      <div>
+        <div class="nav-sidebar-logo">Shop</div>
+        <div class="nav-sidebar-subtitle">Gourmet Selection</div>
+      </div>
+      <button class="nav-sidebar-close" id="nav-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="nav-sidebar-items">
+      <a href="main.html" class="nav-sidebar-item active">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        <span>See All Products</span>
+      </a>
+      <a href="pizza.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12l10 10 10-10c0-5.52-4.48-10-10-10z"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="14" cy="12" r="1" fill="currentColor"/></svg></span>
+        <span>Pizza</span>
+      </a>
+      <a href="burger.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M4 15h16a1 1 0 011 1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a1 1 0 011-1z"/><path d="M5 11c-1-5 3-8 7-8s8 3 7 8"/><path d="M4 11h16"/></svg></span>
+        <span>Burger</span>
+      </a>
+      <a href="chowmein.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></span>
+        <span>Chowmein</span>
+      </a>
+      <a href="chilli-potato.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><ellipse cx="12" cy="14" rx="8" ry="6"/><path d="M12 8V3"/><path d="M10 5c0-2 4-2 4 0"/></svg></span>
+        <span>Chilli Potato</span>
+      </a>
+      <a href="sides.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M7 3v4a1 1 0 001 1h0a1 1 0 001-1V3"/><path d="M15 3v4a1 1 0 001 1h0a1 1 0 001-1V3"/><path d="M7 8c0 6-2 8-2 13h14c0-5-2-7-2-13"/></svg></span>
+        <span>Sides</span>
+      </a>
+      <a href="shake.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2v20M17 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg></span>
+        <span>Shake</span>
+      </a>
+      <a href="drink.html" class="nav-sidebar-item">
+        <span class="nav-sidebar-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M12 2v20M17 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg></span>
+        <span>Drink</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ============================================
+       CIRCULAR CATEGORY NAVIGATION
+       ============================================ -->
+  <nav class="category-nav" aria-label="Food categories">
+    <div class="category-scroll">
+
+      <!-- # change category-1-image here -->
+      <!-- # change category-1-name here -->
+      <a href="pizza.html" class="category-item" data-category="pizza">
+        <div class="category-circle">
+          <img src="assets/cat-pizza.png" alt="Pizza" />
+        </div>
+        <span class="category-label">Pizza</span>
+      </a>
+
+      <!-- # change category-2-image here -->
+      <!-- # change category-2-name here -->
+      <a href="burger.html" class="category-item" data-category="burger">
+        <div class="category-circle">
+          <img src="assets/cat-burger.png" alt="Burger" />
+        </div>
+        <span class="category-label">Burger</span>
+      </a>
+
+      <!-- # change category-3-image here -->
+      <!-- # change category-3-name here -->
+      <a href="chowmein.html" class="category-item" data-category="chowmein">
+        <div class="category-circle">
+          <img src="assets/cat-chowmein.png" alt="Chowmein" />
+        </div>
+        <span class="category-label">Chowmein</span>
+      </a>
+
+      <!-- # change category-4-image here -->
+      <!-- # change category-4-name here -->
+      <a href="chilli-potato.html" class="category-item" data-category="chilli-potato">
+        <div class="category-circle">
+          <img src="assets/cat-chilli-potato.png" alt="Chilli Potato" />
+        </div>
+        <span class="category-label">Chilli Potato</span>
+      </a>
+
+      <!-- # change category-5-image here -->
+      <!-- # change category-5-name here -->
+      <a href="sides.html" class="category-item" data-category="sides">
+        <div class="category-circle">
+          <img src="assets/cat-sides.png" alt="Sides" />
+        </div>
+        <span class="category-label">Sides</span>
+      </a>
+
+      <!-- # change category-6-image here -->
+      <!-- # change category-6-name here -->
+      <a href="shake.html" class="category-item" data-category="shake">
+        <div class="category-circle">
+          <img src="assets/cat-shakes.png" alt="Shake" />
+        </div>
+        <span class="category-label">Shake</span>
+      </a>
+
+      <!-- # change category-7-image here -->
+      <!-- # change category-7-name here -->
+      <a href="drink.html" class="category-item" data-category="drink">
+        <div class="category-circle">
+          <img src="assets/cat-drink.png" alt="Drink" />
+        </div>
+        <span class="category-label">Drink</span>
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION (VIDEO)
+       ============================================ -->
+  <section class="hero" id="hero-section">
+    <!-- # change hero-video here (replace src with your hero.mp4) -->
+    <!-- # change hero-poster-image here (fallback image while video loads) -->
+    <video class="hero-video" src="assets/hero.mp4" autoplay muted loop playsinline></video>
+
+    <div class="hero-overlay">
+      <!-- # change hero-tagline here -->
+      <div class="hero-tag">The Ultimate Pizza Experience</div>
+
+      <!-- # change hero-subtitle here -->
+      <p class="hero-subtitle">Artisanal crusts, premium ingredients, crafted for the discerning palate.</p>
+
+      <!-- # change hero-cta-text here -->
+      <!-- # change hero-cta-link here -->
+      <a href="#menu-section" class="hero-cta">Order and get a free garlic bread</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OUR FIELD TO FORK PROCESS
+       ============================================ -->
+  <section class="process-section reveal" id="process-section">
+    <!-- # change process-title here -->
+    <h2 class="process-title">Our Field to Fork Process</h2>
+
+    <div class="process-steps">
+      <!-- Step 1: Farm -->
+      <div class="process-step">
+        <!-- # change process-icon-1 here -->
+        <div class="process-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Wheat stalks -->
+              <path d="M20 65V35" />
+              <path d="M20 50c-6-3-8-10-8-10s6 1 8 5" />
+              <path d="M20 42c-5-4-6-11-6-11s5 2 6 6" />
+              <path d="M20 50c6-3 8-10 8-10s-6 1-8 5" />
+              <path d="M20 42c5-4 6-11 6-11s-5 2-6 6" />
+              <path d="M20 35c-3-5-2-10-2-10s4 2 4 6" />
+              <path d="M20 35c3-5 2-10 2-10s-4 2-4 6" />
+              <!-- More stalks -->
+              <path d="M35 65V40" />
+              <path d="M35 55c-5-3-7-9-7-9s5 1 7 4" />
+              <path d="M35 48c-4-4-5-9-5-9s4 2 5 5" />
+              <path d="M35 55c5-3 7-9 7-9s-5 1-7 4" />
+              <path d="M35 48c4-4 5-9 5-9s-4 2-5 5" />
+              <path d="M35 40c-2-4-1-8-1-8s3 2 3 5" />
+              <path d="M35 40c2-4 1-8 1-8s-3 2-3 5" />
+              <!-- Ground -->
+              <path d="M8 65h40" />
+              <!-- Sun -->
+              <circle cx="58" cy="22" r="8" />
+              <line x1="58" y1="10" x2="58" y2="6" />
+              <line x1="58" y1="38" x2="58" y2="34" />
+              <line x1="46" y1="22" x2="42" y2="22" />
+              <line x1="74" y1="22" x2="70" y2="22" />
+              <line x1="49.5" y1="13.5" x2="47" y2="11" />
+              <line x1="66.5" y1="30.5" x2="69" y2="33" />
+              <line x1="49.5" y1="30.5" x2="47" y2="33" />
+              <line x1="66.5" y1="13.5" x2="69" y2="11" />
+            </g>
+          </svg>
+        </div>
+        <!-- # change process-step-1-label here -->
+        <span class="process-step-label">Farm</span>
+      </div>
+
+      <div class="process-connector">
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+      </div>
+
+      <!-- Step 2: Mill -->
+      <div class="process-step">
+        <!-- # change process-icon-2 here -->
+        <div class="process-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Mill building -->
+              <rect x="20" y="35" width="40" height="30" rx="0" />
+              <path d="M15 65h50" />
+              <!-- Roof -->
+              <path d="M18 35l22-15 22 15" />
+              <!-- Door -->
+              <rect x="34" y="48" width="12" height="17" />
+              <!-- Windows -->
+              <rect x="25" y="40" width="8" height="6" />
+              <rect x="47" y="40" width="8" height="6" />
+              <!-- Chimney -->
+              <rect x="50" y="18" width="6" height="12" />
+              <!-- Smoke -->
+              <path d="M53 18c0-3 3-5 3-8" />
+              <path d="M53 16c2-2 5-3 4-7" />
+              <!-- Gear/wheel -->
+              <circle cx="40" cy="42" r="0" />
+            </g>
+          </svg>
+        </div>
+        <!-- # change process-step-2-label here -->
+        <span class="process-step-label">Mill</span>
+      </div>
+
+      <div class="process-connector">
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+      </div>
+
+      <!-- Step 3: Shop -->
+      <div class="process-step">
+        <!-- # change process-icon-3 here -->
+        <div class="process-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Shop body -->
+              <rect x="12" y="32" width="56" height="33" />
+              <path d="M8 65h64" />
+              <!-- Awning -->
+              <path d="M10 32l4-10h52l4 10" />
+              <path d="M10 32c0 5 5 7 9 7s9-2 9-7" />
+              <path d="M28 32c0 5 5 7 9 7s9-2 9-7" />
+              <path d="M46 32c0 5 5 7 9 7s9-2 9-7" />
+              <!-- Door -->
+              <rect x="32" y="45" width="16" height="20" />
+              <circle cx="44" cy="55" r="1.5" fill="#1C1C1C" />
+              <!-- Window -->
+              <rect x="17" y="42" width="10" height="10" />
+              <line x1="22" y1="42" x2="22" y2="52" />
+              <line x1="17" y1="47" x2="27" y2="47" />
+              <rect x="53" y="42" width="10" height="10" />
+              <line x1="58" y1="42" x2="58" y2="52" />
+              <line x1="53" y1="47" x2="63" y2="47" />
+              <!-- Sign -->
+              <rect x="30" y="23" width="20" height="6" rx="0" />
+            </g>
+          </svg>
+        </div>
+        <!-- # change process-step-3-label here -->
+        <span class="process-step-label">Shop</span>
+      </div>
+
+      <div class="process-connector">
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+        <span class="process-dot"></span>
+      </div>
+
+      <!-- Step 4: Customer Home -->
+      <div class="process-step">
+        <!-- # change process-icon-4 here -->
+        <div class="process-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- House body -->
+              <rect x="18" y="38" width="44" height="27" />
+              <path d="M12 65h56" />
+              <!-- Roof -->
+              <path d="M14 38l26-18 26 18" />
+              <!-- Door -->
+              <rect x="34" y="48" width="12" height="17" />
+              <circle cx="43" cy="57" r="1.5" fill="#1C1C1C" />
+              <!-- Windows -->
+              <rect x="22" y="43" width="9" height="8" />
+              <line x1="26.5" y1="43" x2="26.5" y2="51" />
+              <line x1="22" y1="47" x2="31" y2="47" />
+              <rect x="49" y="43" width="9" height="8" />
+              <line x1="53.5" y1="43" x2="53.5" y2="51" />
+              <line x1="49" y1="47" x2="58" y2="47" />
+              <!-- Chimney -->
+              <rect x="50" y="22" width="6" height="12" />
+              <!-- Heart / love -->
+              <path d="M37 28c-1-3 3-5 5-2 2-3 6-1 5 2-1 3-5 5-5 5s-4-2-5-5" fill="none" />
+            </g>
+          </svg>
+        </div>
+        <!-- # change process-step-4-label here -->
+        <span class="process-step-label">Customer Home</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SEASONAL MENU — 4 MAIN PIZZAS
+       ============================================ -->
+  <section class="menu-section reveal" id="menu-section">
+    <div class="menu-header">
+      <!-- # change menu-section-title here -->
+      <h2 class="menu-title">Seasonal Menu</h2>
+
+      <!-- # change menu-explore-link here -->
+      <a href="#" class="menu-explore">Explore <span class="arrow">→</span></a>
+    </div>
+
+    <div class="menu-scroll">
+
+      <!-- ===== PIZZA 1 ===== -->
+      <article class="product-card" data-product-id="pizza_cheesy_lover">
+        <div class="product-card-image">
+          <!-- # change pizza-1-image here -->
+          <img src="assets/pizza-cheesy-lover.png" alt="Cheesy Lover Pizza" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-name">
+            <!-- # change pizza-1-name here -->
+            <span>Cheesy Lover</span>
+            <!-- # change pizza-1-price here -->
+            <span class="product-card-price">₹99.00</span>
+          </div>
+          <!-- # change pizza-1-tags here -->
+          <p class="product-card-tags">simply veg, classic</p>
+          <!-- # change pizza-1-description here -->
+          <p class="product-card-desc">Single cheese topping on our premium fresh hand-stretched crust.</p>
+          <button class="btn-add-cart" data-id="pizza_cheesy_lover" data-name="Cheesy Lover" data-price="99.00"
+            data-image="assets/pizza-cheesy-lover.png" data-tags="simply veg, classic" data-category="Pizza">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- ===== PIZZA 2 ===== -->
+      <article class="product-card" data-product-id="pizza_spicy_tango">
+        <div class="product-card-image">
+          <!-- # change pizza-2-image here -->
+          <img src="assets/pizza-spicy-tango.png" alt="Spicy Tango Pizza" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-name">
+            <!-- # change pizza-2-name here -->
+            <span>Spicy Tango</span>
+            <!-- # change pizza-2-price here -->
+            <span class="product-card-price">₹149.00</span>
+          </div>
+          <!-- # change pizza-2-tags here -->
+          <p class="product-card-tags">veg delight, spicy</p>
+          <!-- # change pizza-2-description here -->
+          <p class="product-card-desc">Golden corn, jalapeno, and red paprika loaded with extra cheese.</p>
+          <button class="btn-add-cart" data-id="pizza_spicy_tango" data-name="Spicy Tango Pizza" data-price="149.00"
+            data-image="assets/pizza-spicy-tango.png" data-tags="veg delight, spicy" data-category="Pizza">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- ===== PIZZA 3 ===== -->
+      <article class="product-card" data-product-id="pizza_paneer_cheesy">
+        <div class="product-card-image">
+          <!-- # change pizza-3-image here -->
+          <img src="assets/pizza-paneer.png" alt="Paneer Cheesy Pizza" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-name">
+            <!-- # change pizza-3-name here -->
+            <span>Paneer Cheesy</span>
+            <!-- # change pizza-3-price here -->
+            <span class="product-card-price">₹199.00</span>
+          </div>
+          <!-- # change pizza-3-tags here -->
+          <p class="product-card-tags">veg special, paneer</p>
+          <!-- # change pizza-3-description here -->
+          <p class="product-card-desc">Loaded with double cheese and double juicy paneer chunks.</p>
+          <button class="btn-add-cart" data-id="pizza_paneer_cheesy" data-name="Paneer Cheesy" data-price="199.00"
+            data-image="assets/pizza-paneer.png" data-tags="veg special, paneer" data-category="Pizza">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- ===== PIZZA 4 ===== -->
+      <article class="product-card" data-product-id="pizza_farmers_special">
+        <div class="product-card-image">
+          <!-- # change pizza-4-image here -->
+          <img src="assets/pizza-margherita.png" alt="Pizza Farmers Veg Special" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-name">
+            <!-- # change pizza-4-name here -->
+            <span>Farmers Veg Special</span>
+            <!-- # change pizza-4-price here -->
+            <span class="product-card-price">₹210.00</span>
+          </div>
+          <!-- # change pizza-4-tags here -->
+          <p class="product-card-tags">veg special, signature</p>
+          <!-- # change pizza-4-description here -->
+          <p class="product-card-desc">Signature double paneer, corn, mushrooms, jalapenos, and yellow capsicum.</p>
+          <button class="btn-add-cart" data-id="pizza_farmers_special" data-name="Pizza Farmers Veg Special" data-price="210.00"
+            data-image="assets/pizza-margherita.png" data-tags="veg special, signature" data-category="Pizza">Add to Cart</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMBO DEALS
+       ============================================ -->
+  <section class="combo-section reveal" id="combo-section">
+    <!-- # change combo-section-title here -->
+    <h2 class="combo-title">Combo Deals</h2>
+
+    <!-- Combo 1 -->
+    <div class="combo-card">
+      <div class="combo-card-header">
+        <!-- # change combo-1-name here -->
+        <h3 class="combo-card-name">Duo Feast</h3>
+        <!-- # change combo-1-price here -->
+        <span class="combo-card-price">₹299</span>
+      </div>
+      <!-- # change combo-1-description here -->
+      <p class="combo-card-desc">2 Pizzas of your choice + 1 Cold Drink (500ml). Perfect for sharing.</p>
+      <!-- # change combo-1-cta-text here -->
+      <button class="btn-combo" data-combo="duo-feast">Select Combo</button>
+    </div>
+
+    <!-- Combo 2 -->
+    <div class="combo-card">
+      <div class="combo-card-header">
+        <!-- # change combo-2-name here -->
+        <h3 class="combo-card-name">Party Pack</h3>
+        <!-- # change combo-2-price here -->
+        <span class="combo-card-price">₹599</span>
+      </div>
+      <!-- # change combo-2-description here -->
+      <p class="combo-card-desc">3 Pizzas of your choice + 2 Cold Drinks (500ml). Great for gatherings.</p>
+      <!-- # change combo-2-cta-text here -->
+      <button class="btn-combo" data-combo="party-pack">Select Combo</button>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <!-- ============================================
+       INFO BOX SECTION
+       ============================================ -->
+  <!-- # change info-box-section details here (Modify the shop name, address, hours, and contact details below) -->
+  <section class="main-info-box-section reveal" id="info-box-section">
+    <div class="info-box-card">
+      <!-- # change info-box-title here -->
+      <h2 class="info-box-title">Farmer Pizza</h2>
+      <!-- # change info-box-subtitle here -->
+      <div class="info-box-subtitle">Join us for more discount and combos</div>
+      <div class="info-box-details">
+        <!-- # change info-box-address here -->
+        <p>📍 <strong>Address:</strong> Near Farmers Field, Sugar Mill Road, Muzaffarnagar, UP, India</p>
+        <!-- # change info-box-hours here -->
+        <p>🕒 <strong>Hours:</strong> Open Daily: 11:00 AM - 11:00 PM</p>
+        <!-- # change info-box-phone here (mention: modify the contact number below) -->
+        <a href="tel:9286175004" class="info-box-phone">📞 9286175004</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       AUTOMATED SCROLLING REVIEWS GRID
+       ============================================ -->
+  <!-- # change reviews-section details here -->
+  <section class="reviews-section reveal" id="reviews-section">
+    <!-- # change reviews-header-title here -->
+    <h2 class="reviews-header-title">What Our Farmers Say</h2>
+    
+    <div class="reviews-marquee-wrapper">
+      <!-- First Row: Left to Right scrolling -->
+      <div class="reviews-marquee left-to-right">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Cheesy Lover pizza is absolutely out of this world! Best pizza in town by far."</p>
+          <div class="review-author"><span>Rohan Sharma</span><span>Verified</span></div>
+        </div>
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Super fresh toppings. The Paneer Cheesy is loaded and the crust is so soft and crispy."</p>
+          <div class="review-author"><span>Priya Patel</span><span>Verified</span></div>
+        </div>
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Amazing concept! The field-to-fork process really shows in the taste. Worth every rupee."</p>
+          <div class="review-author"><span>Amit Verma</span><span>Verified</span></div>
+        </div>
+        <!-- Review 4 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Tried the Farmers Special Burger and it is massive! Very delicious and juicy."</p>
+          <div class="review-author"><span>Karan Singh</span><span>Verified</span></div>
+        </div>
+        
+        <!-- Duplicate for Infinite Scroll -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Cheesy Lover pizza is absolutely out of this world! Best pizza in town by far."</p>
+          <div class="review-author"><span>Rohan Sharma</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Super fresh toppings. The Paneer Cheesy is loaded and the crust is so soft and crispy."</p>
+          <div class="review-author"><span>Priya Patel</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Amazing concept! The field-to-fork process really shows in the taste. Worth every rupee."</p>
+          <div class="review-author"><span>Amit Verma</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Tried the Farmers Special Burger and it is massive! Very delicious and juicy."</p>
+          <div class="review-author"><span>Karan Singh</span><span>Verified</span></div>
+        </div>
+      </div>
+      
+      <!-- Second Row: Right to Left scrolling -->
+      <div class="reviews-marquee right-to-left">
+        <!-- Review 5 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Highly recommend the Honey Chilli Potato. Sweet and spicy, perfectly crispy!"</p>
+          <div class="review-author"><span>Neha Gupta</span><span>Verified</span></div>
+        </div>
+        <!-- Review 6 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Oreo Shake is thick and chocolatey. Kids loved it so much. Excellent beverages."</p>
+          <div class="review-author"><span>Sanjay Dutt</span><span>Verified</span></div>
+        </div>
+        <!-- Review 7 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Garlic Bread is so buttery and soft, went perfectly with the Red Pasta."</p>
+          <div class="review-author"><span>Anjali Rao</span><span>Verified</span></div>
+        </div>
+        <!-- Review 8 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Fast delivery, food arrived hot. The Whatsapp ordering is super convenient!"</p>
+          <div class="review-author"><span>Vikram Sen</span><span>Verified</span></div>
+        </div>
+        
+        <!-- Duplicate for Infinite Scroll -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Highly recommend the Honey Chilli Potato. Sweet and spicy, perfectly crispy!"</p>
+          <div class="review-author"><span>Neha Gupta</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Oreo Shake is thick and chocolatey. Kids loved it so much. Excellent beverages."</p>
+          <div class="review-author"><span>Sanjay Dutt</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Garlic Bread is so buttery and soft, went perfectly with the Red Pasta."</p>
+          <div class="review-author"><span>Anjali Rao</span><span>Verified</span></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Fast delivery, food arrived hot. The Whatsapp ordering is super convenient!"</p>
+          <div class="review-author"><span>Vikram Sen</span><span>Verified</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOLLOW US & CONTACT US SECTION
+       ============================================ -->
+  <!-- # change social-contact-section here (Modify social headers and external anchor tags below) -->
+  <section class="social-contact-section reveal" id="social-contact-section">
+    <!-- # change social-title here -->
+    <h2 class="social-title">Connect With Us</h2>
+    <div class="social-grid">
+      <!-- Instagram Card -->
+      <!-- # change instagram-link here (modify the Instagram URL in the href below) -->
+      <a href="https://www.instagram.com/farmers_pizza_?igsh=Z3Byd3VlcnlpYjlt" target="_blank" rel="noopener" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+        <h3 class="social-card-name">Instagram</h3>
+        <span class="social-card-link">Follow @farmers_pizza_</span>
+      </a>
+      
+      <!-- Google Maps Card -->
+      <!-- # change maps-link here (modify the Google Maps URL in the href below) -->
+      <a href="https://maps.app.goo.gl/hPDTuCM2B3fGc8yQ8?g_st=ac" target="_blank" rel="noopener" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="social-card-name">Find Us</h3>
+        <span class="social-card-link">Open in Google Maps</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer" id="site-footer">
+    <!-- # change footer-logo-text here -->
+    <div class="footer-logo">Farmer Pizza</div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <!-- # change footer-link-1 here -->
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <!-- # change footer-link-2 here -->
+      <a href="#" class="footer-link">Terms of Service</a>
+      <!-- # change footer-link-3-text here -->
+      <!-- # change footer-link-3-url here -->
+      <a href="https://maps.app.goo.gl/hPDTuCM2B3fGc8yQ8?g_st=ac" class="footer-link" target="_blank">Location</a>
+      <!-- # change footer-link-4-text here -->
+      <!-- # change footer-link-4-url here -->
+      <a href="tel:9286175004" class="footer-link">Contact Us</a>
+    </nav>
+
+    <!-- # change footer-copyright here -->
+    <p class="footer-copy">© 2024 Farmer Pizza. Artisanal Craft.</p>
+  </footer>
+
+  <!-- ============================================
+       CART SIDEBAR (UNIVERSAL — slides from right)
+       ============================================ -->
+
+  <!-- Backdrop overlay -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <!-- Cart Panel -->
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+    <!-- Cart Header -->
+    <div class="cart-header">
+      <span class="cart-header-title">Shopping Cart</span>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close cart">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Nudge -->
+    <div class="cart-delivery-nudge">
+      <div class="delivery-nudge-text">
+        <span class="icon">🚗</span>
+        <!-- # change free-delivery-threshold here (default 299) -->
+        <span id="delivery-nudge-label">Use <strong>₹299.00</strong> more and get free delivery</span>
+      </div>
+      <div class="delivery-progress-bar">
+        <div class="delivery-progress-fill" id="delivery-progress" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items (dynamically rendered by JS) -->
+    <div class="cart-items" id="cart-items">
+      <!-- Empty state (shown when cart is empty) -->
+      <div class="cart-empty" id="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p class="cart-empty-text">Your cart is empty</p>
+      </div>
+    </div>
+
+    <!-- Cart Footer -->
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-location-section" id="cart-location-section">
+        <button class="btn-grant-location" id="btn-grant-location">📍 Share Location for Delivery</button>
+        <div class="cart-location-status" id="cart-location-status"></div>
+      </div>
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">Subtotal</span>
+        <!-- # change currency-symbol here if not ₹ -->
+        <span class="cart-summary-value" id="cart-subtotal">₹0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">Delivery</span>
+        <span class="cart-summary-value" id="cart-delivery">Share location above</span>
+      </div>
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-value" id="cart-total">₹0.00</span>
+      </div>
+      <!-- # change checkout-button-text here -->
+      <a href="#" class="btn-whatsapp-order disabled" id="btn-whatsapp-order" target="_blank">📲 Order via WhatsApp</a>
+      <a href="main.html" class="btn-continue-shopping">← Continue Shopping</a>
+    </div>
+  </aside>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
