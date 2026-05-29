@@ -403,7 +403,7 @@
       upgradesDiv.innerHTML =
         '<select class="upgrade-select">' +
           '<option value="0" ' + (!item.extraCheese ? 'selected' : '') + '>+ Extra Cheese</option>' +
-          '<option value="30" ' + (item.extraCheese === 30 ? 'selected' : '') + '>Small (+₹30)</option>' +
+          '<option value="20" ' + (item.extraCheese === 20 ? 'selected' : '') + '>Small (+₹20)</option>' +
           '<option value="40" ' + (item.extraCheese === 40 ? 'selected' : '') + '>Medium (+₹40)</option>' +
           '<option value="50" ' + (item.extraCheese === 50 ? 'selected' : '') + '>Large (+₹50)</option>' +
         '</select>' +
