@@ -876,22 +876,35 @@
   }
 
  // ============================================
-  // 21. SPLASH SCREEN TRIGGER
+  // 21. PREMIUM SPLASH FADE & VIDEO SYNC
   // ============================================
   window.addEventListener('load', function() {
     var splashScreen = document.getElementById('splash-screen');
+    var heroVideo = document.getElementById('hero-bg-video'); // Targets your main video
     
     if (splashScreen) {
-      // Keeps it on screen for exactly 3 seconds
+      // Keeps the cursive text on screen for exactly 3 seconds
       setTimeout(function() {
-        splashScreen.classList.add('hidden'); 
+        splashScreen.classList.add('hidden'); // Triggers the 1.5s cinematic fade out
         
-        // Deletes it entirely so it doesn't slow down the website
+        // Starts the background video the exact millisecond the fade begins
+        if (heroVideo) {
+          heroVideo.play().catch(function(error) {
+            console.log("Video autoplay blocked by browser:", error);
+          });
+        }
+        
+        // Deletes splash screen from memory after the 1.5s fade finishes
         setTimeout(function() {
           splashScreen.remove();
-        }, 800);
+        }, 1500);
         
       }, 3000); 
+    } else {
+      // If the user navigates back to index.html and splash screen is gone, play video instantly
+      if (heroVideo) {
+        heroVideo.play();
+      }
     }
   });  
 
