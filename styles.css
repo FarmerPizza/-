@@ -2841,3 +2841,62 @@ body.nav-open {
 .catalog-grid .catalog-card-action-btn:hover::after {
   color: #fff !important; /* Turns text white */
 }
+
+/* ============================================
+   CART COUPON SECTION
+   ============================================ */
+.cart-coupon-section {
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--surface-container-high);
+}
+
+.coupon-input-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.coupon-input-group input {
+  flex: 1;
+  padding: 10px 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--deep-charcoal);
+  background-color: var(--surface-gray);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0px; /* Sharp corners */
+  outline: none;
+  text-transform: uppercase; /* Forces text to caps */
+}
+
+.coupon-input-group input:focus {
+  border-color: var(--deep-charcoal);
+}
+
+.coupon-input-group button {
+  padding: 0 16px;
+  background-color: var(--deep-charcoal);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast);
+}
+
+.coupon-input-group button:hover {
+  background-color: var(--pizza-red);
+}
+
+.coupon-message {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 6px;
+  min-height: 16px;
+}
+.coupon-message.success { color: #2e7d32; }
+.coupon-message.error { color: var(--error); }
