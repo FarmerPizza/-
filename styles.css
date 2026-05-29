@@ -2914,3 +2914,15 @@ body.nav-open {
   width: 100% !important;
   height: 100% !important;
 }
+/* ============================================
+   PIZZA & BURGER IMAGE ENLARGER
+   ============================================ */
+
+/* Targets any image with "pizza" OR "burger" in its file name */
+.catalog-grid .catalog-card-media img[src*="pizza"],
+.catalog-grid .catalog-card-media img[src*="burger"] {
+  object-fit: cover !important; /* Stretches to fill the box */
+  padding: 0 !important; /* Removes the shake padding */
+  width: 100% !important;
+  height: 100% !important;
+}
