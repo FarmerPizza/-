@@ -439,6 +439,15 @@
     <div class="cart-items" id="cart-items"><div class="cart-empty" id="cart-empty"><div class="cart-empty-icon">🛒</div><p class="cart-empty-text">Your cart is empty</p></div></div>
     <div class="cart-footer" id="cart-footer" style="display: none;">
       <div class="cart-location-section" id="cart-location-section"><button class="btn-grant-location" id="btn-grant-location">📍 Share Location for Delivery</button><div class="cart-location-status" id="cart-location-status"></div></div>
+      <!-- INJECTED COUPON SECTION -->
+      <div class="cart-coupon-section" id="cart-coupon-section">
+        <div class="coupon-input-group">
+          <input type="text" id="coupon-input" placeholder="Promo Code" autocomplete="off" />
+          <button type="button" id="btn-apply-coupon">Apply</button>
+        </div>
+        <div id="coupon-message" class="coupon-message"></div>
+      </div>
+      <!-- END COUPON SECTION -->
       <div class="cart-summary-row"><span class="cart-summary-label">Subtotal</span><span class="cart-summary-value" id="cart-subtotal">₹0.00</span></div>
       <div class="cart-summary-row"><span class="cart-summary-label">Delivery</span><span class="cart-summary-value" id="cart-delivery">Share location above</span></div>
       <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-value" id="cart-total">₹0.00</span></div>
