@@ -983,6 +983,10 @@ document.getElementById('btn-apply-coupon').addEventListener('click', function()
 // 3. "Burn" the coupon when they click Order via WhatsApp
 document.getElementById('btn-whatsapp-order').addEventListener('click', function() {
   if (activeCouponCode) {
+     // delete if create any problem
+     
+     message += `\n🎁 Coupon Applied: ${activeCouponCode}`;
+    message += `\nDiscount: ${activeDiscountValue * 100}%\n`;
     // Pull the memory list, add the code, and save it back
     const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
     if (!burnedCoupons.includes(activeCouponCode)) {
