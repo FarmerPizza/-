@@ -875,4 +875,24 @@
     });
   }
 
+ // ============================================
+  // 21. SPLASH SCREEN TRIGGER
+  // ============================================
+  window.addEventListener('load', function() {
+    var splashScreen = document.getElementById('splash-screen');
+    
+    if (splashScreen) {
+      // Keeps it on screen for exactly 3 seconds
+      setTimeout(function() {
+        splashScreen.classList.add('hidden'); 
+        
+        // Deletes it entirely so it doesn't slow down the website
+        setTimeout(function() {
+          splashScreen.remove();
+        }, 800);
+        
+      }, 3000); 
+    }
+  });  
+
 })();
