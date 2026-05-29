@@ -2904,23 +2904,26 @@ body.nav-open {
 
 
 /* ============================================
-   FOOD IMAGE ENLARGER (Pizza, Burger, Chowmein, Chilli/Potato, Sides)
+   ULTIMATE IMAGE ENLARGER (All Food Edge-to-Edge)
    ============================================ */
 
-/* Targets any image with these exact words in their file name */
-.catalog-grid .catalog-card-media img[src*="pizza"],
-.catalog-grid .catalog-card-media img[src*="burger"],
-.catalog-grid .catalog-card-media img[src*="chowmein"],
-.catalog-grid .catalog-card-media img[src*="chilli"],
-.catalog-grid .catalog-card-media img[src*="potato"], 
-.catalog-grid .catalog-card-media img[src*="side"] {
-  object-fit: cover !important; /* Stretches to fill the box */
-  padding: 0 !important; /* Removes the shake/drink padding */
-  
+/* 1. Forces ALL product images to stretch edge-to-edge by default */
+.catalog-grid .catalog-card-media img {
+  object-fit: cover !important; 
+  padding: 0 !important; 
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;  /* SURGICAL FIX: Breaks the 95% ceiling! */
-  max-height: 100% !important; /* SURGICAL FIX: Breaks the 95% ceiling! */
-  
-  border-radius: 20px 20px 0 0 !important; /* Ensures the top corners stay beautifully round */
+  max-width: 100% !important;  
+  max-height: 100% !important; 
+  border-radius: 16px 16px 0 0 !important; 
+}
+
+/* 2. PROTECTS SHAKES & DRINKS ONLY (Keeps them padded so they don't get chopped) */
+.catalog-grid .catalog-card-media img[src*="shake"],
+.catalog-grid .catalog-card-media img[src*="drink"],
+.catalog-grid .catalog-card-media img[src*="coke"],
+.catalog-grid .catalog-card-media img[src*="pepsi"],
+.catalog-grid .catalog-card-media img[src*="bottle"] {
+  object-fit: contain !important; 
+  padding: 12px !important; 
 }
