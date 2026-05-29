@@ -5,7 +5,7 @@
 
 /* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 /* ============================================
    1. DESIGN TOKENS (CSS Custom Properties)
    ============================================ */
@@ -2589,4 +2589,85 @@ body.nav-open {
     font-size: 12px;
     line-height: 1.4;
   }
+}
+
+
+/* ============================================
+   DESI CURSIVE SPLASH SCREEN
+   ============================================ */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #161210; /* Dark, earthy rustic brown/black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s var(--ease-spring), opacity 0.8s ease;
+}
+
+.splash-screen.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-desi-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Wheat Animation */
+.splash-wheat {
+  width: 60px;
+  height: 60px;
+  color: #c5a059;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: wheatRise 1s forwards 0.2s;
+}
+
+/* Text Container */
+.splash-text-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+/* Cursive Font Setup */
+.splash-cursive {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  /* Hides the text initially for the sweep effect */
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); 
+}
+
+/* Shining Gold Farmers */
+.farmers-text {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: writeText 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.5s;
+}
+
+/* Earthy Green Pizza */
+.pizza-text {
+  color: #4CAF50; /* Desi agricultural green */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  animation: writeText 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.2s; /* Starts after Farmers finishes */
+}
+
+/* Animations */
+@keyframes wheatRise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes writeText {
+  to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
