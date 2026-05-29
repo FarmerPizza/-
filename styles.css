@@ -2792,7 +2792,9 @@ body.nav-open {
 .catalog-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* SURGICAL FIX: 'contain' fits the whole cup without zooming or cropping! */
+  object-fit: contain; 
+  padding: 12px; /* Gives the cup breathing room so it doesn't touch the edges */
 }
 
 /* 4. Fix the + button to the bottom center */
