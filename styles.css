@@ -2748,3 +2748,27 @@ body.nav-open {
 .close-overlay:hover {
   color: var(--pizza-red);
 }
+
+/* ============================================
+   CATALOG CARD FIX (BOX SHAPE LIKE BURGERS)
+   ============================================ */
+.catalog-card {
+  border-radius: 16px !important; /* Forces the clean box shape, removes the weird pill shape */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 16px; /* Adds breathing room at the bottom */
+}
+
+/* Forces the + button to sit perfectly in the bottom center */
+.catalog-card-action-btn {
+  margin: 0 auto !important; 
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+}
+
+/* Hides the extra inline home button if you forget to delete it in HTML */
+.catalog-home-btn-inline {
+  display: none !important; 
+}
