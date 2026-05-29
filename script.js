@@ -19,7 +19,7 @@
 
   // # change shop-location here (latitude, longitude)
   // Coordinates extracted from: https://maps.app.goo.gl/hPDTuCM2B3fGc8yQ8?g_st=ac
-  var SHOP_LOCATION = { lat: 29.3279995, lng: 77.851953 };
+  var SHOP_LOCATION = { lat: 29.332177, lng: 77.851926 };
 
   // # change delivery-rate-per-meter here
   var RATE_PER_METER = 0.015;
