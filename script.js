@@ -924,4 +924,72 @@
     }
   });
 
+   /* ============================================
+   COUPON & DISCOUNT LOGIC (LOCAL STORAGE)
+   ============================================ */
+
+// 1. Define your valid coupons and their discount percentages
+const VALID_COUPONS = {
+  "FARMER15": 0.15, // 15% off
+  "WELCOME10": 0.10 // 10% off
+};
+
+let activeCouponCode = null;
+let activeDiscountValue = 0;
+
+// 2. Handle the "Apply" Button Click
+document.getElementById('btn-apply-coupon').addEventListener('click', function() {
+  const inputEl = document.getElementById('coupon-input');
+  const messageEl = document.getElementById('coupon-message');
+  const code = inputEl.value.trim().toUpperCase();
+
+  // Reset message
+  messageEl.className = 'coupon-message';
+  messageEl.textContent = '';
+
+  if (!code) return;
+
+  // Check the "Memory Brain" to see if it was already burned
+  const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
+
+  if (burnedCoupons.includes(code)) {
+    messageEl.classList.add('error');
+    messageEl.textContent = "This coupon has already been used on this device.";
+    activeCouponCode = null;
+    activeDiscountValue = 0;
+    return;
+  }
+
+  // Check if it is a real coupon
+  if (VALID_COUPONS[code]) {
+    activeCouponCode = code;
+    activeDiscountValue = VALID_COUPONS[code];
+    
+    messageEl.classList.add('success');
+    messageEl.textContent = `✅ ${code} Applied! (${activeDiscountValue * 100}% off)`;
+    
+    // NOTE: YOU MUST CALL YOUR CART UPDATE FUNCTION HERE
+    // e.g., updateCartUI(); or calculateTotal();
+    console.log("Coupon applied. You need to trigger your cart recalculation here.");
+    
+  } else {
+    messageEl.classList.add('error');
+    messageEl.textContent = "Invalid coupon code.";
+    activeCouponCode = null;
+    activeDiscountValue = 0;
+  }
+});
+
+// 3. "Burn" the coupon when they click Order via WhatsApp
+document.getElementById('btn-whatsapp-order').addEventListener('click', function() {
+  if (activeCouponCode) {
+    // Pull the memory list, add the code, and save it back
+    const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
+    if (!burnedCoupons.includes(activeCouponCode)) {
+      burnedCoupons.push(activeCouponCode);
+      localStorage.setItem('farmerBurnedCoupons', JSON.stringify(burnedCoupons));
+    }
+  }
+});
+
 })();
