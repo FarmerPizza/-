@@ -2792,11 +2792,52 @@ body.nav-open {
   padding: 12px; /* Gives the cup/pizza breathing room from the edges */
 }
 
-/* 4. Forces the + button perfectly to the bottom center */
-#catalog-products-grid .catalog-card-action-btn {
+/* 4. Forces the button to center and widens it for text */
+.catalog-grid .catalog-card-action-btn {
+  width: auto !important; 
+  height: 44px !important;
+  padding: 0 20px !important;
+  background-color: rgba(46, 125, 50, 0.08) !important; /* Very soft premium green tint */
+  border-radius: 24px !important; /* Smooth pill shape */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important; /* Space between the + and the text */
   margin: 0 auto !important; 
   position: relative !important;
   bottom: auto !important;
   right: auto !important;
-  z-index: 2; 
+  z-index: 2 !important; 
+  box-shadow: none !important;
+}
+
+/* 5. Injects the "ADD TO CART" text & colors the plus sign green */
+.catalog-grid .catalog-card-action-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  stroke: #2e7d32 !important; /* Rich agricultural green */
+}
+
+.catalog-grid .catalog-card-action-btn::after {
+  content: "ADD"; /* You can change this to "ADD TO CART" if you prefer! */
+  font-family: var(--font-body);
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #2e7d32 !important; /* Rich agricultural green */
+  letter-spacing: 0.05em;
+  white-space: nowrap; /* Prevents text from breaking onto two lines */
+}
+
+/* 6. Premium Hover Effect */
+.catalog-grid .catalog-card-action-btn:hover {
+  background-color: #2e7d32 !important; /* Flips to solid green */
+  transform: translateY(-2px) !important; 
+}
+
+.catalog-grid .catalog-card-action-btn:hover svg {
+  stroke: #fff !important; /* Turns + white */
+}
+
+.catalog-grid .catalog-card-action-btn:hover::after {
+  color: #fff !important; /* Turns text white */
 }
