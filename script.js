@@ -593,18 +593,28 @@
 
     var total = subtotal + deliveryCharge;
 
-    // ▼ SURGICAL FIX 1: APPLY THE MATH DEDUCTION ▼
+    // --- NEW LOGIC: CALCULATE DISCOUNT (EXCLUDING ITEMS UNDER ₹50) ---
     var discountAmount = 0;
-    if (typeof activeDiscountValue !== 'undefined' && activeDiscountValue > 0) {
-      discountAmount = subtotal * activeDiscountValue;
-      total = total - discountAmount;
+    if (typeof window.activeDiscountValue !== 'undefined' && window.activeDiscountValue > 0) {
       
-      var discountEl = document.getElementById('cart-discount-display');
-      if (discountEl) {
-        discountEl.textContent = '-₹' + discountAmount.toFixed(2);
-      }
+      var eligibleSubtotal = 0;
+      
+      // Loop through cart to find items ₹50 or above
+      cart.forEach(function (entry) {
+        var itemTotalCost = entry.price + (entry.extraCheese || 0) + (entry.cheeseBurst || 0);
+        
+        // ONLY apply discount if the item costs 50 or more
+        if (itemTotalCost >= 50) {
+          eligibleSubtotal += itemTotalCost * entry.qty;
+        }
+      });
+
+      // Calculate the discount only on eligible items
+      discountAmount = eligibleSubtotal * window.activeDiscountValue;
+      
+      // Deduct the money from the total
+      total = total - discountAmount; 
     }
-    // ▲ END MATH DEDUCTION ▲
      
 
     // --- Totals ---
