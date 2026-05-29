@@ -352,6 +352,14 @@
     }
 
     msg += '\n\n*Subtotal:* ₹' + subtotal.toFixed(2);
+
+    // ▼ SURGICAL FIX: ADD COUPON TO WHATSAPP MSG ▼
+    if (typeof window.activeCouponCode !== 'undefined' && window.activeCouponCode) {
+      msg += '\n🎁 *COUPON APPLIED: ' + window.activeCouponCode + '*';
+      msg += '\nDiscount: ' + (window.activeDiscountValue * 100) + '% off';
+    }
+    // ▲ END WHATSAPP MSG FIX ▲
+
     msg += '\n*Delivery:* ' + (deliveryCharge === 0 ? 'Free' : '₹' + deliveryCharge.toFixed(2));
     msg += '\n*TOTAL: ₹' + total.toFixed(2) + '*';
     msg += '\n\nPlease confirm my order. Thank you! 🙏';
@@ -584,6 +592,20 @@
     }
 
     var total = subtotal + deliveryCharge;
+
+    // ▼ SURGICAL FIX 1: APPLY THE MATH DEDUCTION ▼
+    var discountAmount = 0;
+    if (typeof activeDiscountValue !== 'undefined' && activeDiscountValue > 0) {
+      discountAmount = subtotal * activeDiscountValue;
+      total = total - discountAmount;
+      
+      var discountEl = document.getElementById('cart-discount-display');
+      if (discountEl) {
+        discountEl.textContent = '-₹' + discountAmount.toFixed(2);
+      }
+    }
+    // ▲ END MATH DEDUCTION ▲
+     
 
     // --- Totals ---
     // # change currency-symbol here if not ₹
@@ -934,66 +956,70 @@ const VALID_COUPONS = {
   "WELCOME10": 0.10 // 10% off
 };
 
-let activeCouponCode = null;
-let activeDiscountValue = 0;
+// SURGICAL FIX: Make these global so the math function can see them!
+window.activeCouponCode = null;
+window.activeDiscountValue = 0;
 
 // 2. Handle the "Apply" Button Click
-document.getElementById('btn-apply-coupon').addEventListener('click', function() {
-  const inputEl = document.getElementById('coupon-input');
-  const messageEl = document.getElementById('coupon-message');
-  const code = inputEl.value.trim().toUpperCase();
+var btnApplyCoupon = document.getElementById('btn-apply-coupon');
+if (btnApplyCoupon) {
+  btnApplyCoupon.addEventListener('click', function() {
+    var inputEl = document.getElementById('coupon-input');
+    var messageEl = document.getElementById('coupon-message');
+    var code = inputEl.value.trim().toUpperCase();
 
-  // Reset message
-  messageEl.className = 'coupon-message';
-  messageEl.textContent = '';
+    // Reset message
+    messageEl.className = 'coupon-message';
+    messageEl.textContent = '';
 
-  if (!code) return;
+    if (!code) return;
 
-  // Check the "Memory Brain" to see if it was already burned
-  const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
+    // Check the "Memory Brain" to see if it was already burned
+    const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
 
-  if (burnedCoupons.includes(code)) {
-    messageEl.classList.add('error');
-    messageEl.textContent = "This coupon has already been used on this device.";
-    activeCouponCode = null;
-    activeDiscountValue = 0;
-    return;
-  }
+    if (burnedCoupons.includes(code)) {
+      messageEl.classList.add('error');
+      messageEl.textContent = "This coupon has already been used on this device.";
+      window.activeCouponCode = null;
+      window.activeDiscountValue = 0;
+      return;
+    }
 
-  // Check if it is a real coupon
-  if (VALID_COUPONS[code]) {
-    activeCouponCode = code;
-    activeDiscountValue = VALID_COUPONS[code];
-    
-    messageEl.classList.add('success');
-    messageEl.textContent = `✅ ${code} Applied! (${activeDiscountValue * 100}% off)`;
-    
-    // NOTE: YOU MUST CALL YOUR CART UPDATE FUNCTION HERE
-    // e.g., updateCartUI(); or calculateTotal();
-    console.log("Coupon applied. You need to trigger your cart recalculation here.");
-    
-  } else {
-    messageEl.classList.add('error');
-    messageEl.textContent = "Invalid coupon code.";
-    activeCouponCode = null;
-    activeDiscountValue = 0;
-  }
-});
+    // Check if it is a real coupon
+    if (VALID_COUPONS[code]) {
+      window.activeCouponCode = code;
+      window.activeDiscountValue = VALID_COUPONS[code];
+      
+      messageEl.classList.add('success');
+      messageEl.textContent = `✅ ${code} Applied! (${window.activeDiscountValue * 100}% off)`;
+      
+      // SURGICAL FIX: This forces the cart to update the math immediately!
+      if (typeof updateCartUI === 'function') {
+        updateCartUI(); 
+      }
+      
+    } else {
+      messageEl.classList.add('error');
+      messageEl.textContent = "Invalid coupon code.";
+      window.activeCouponCode = null;
+      window.activeDiscountValue = 0;
+    }
+  });
+}
 
 // 3. "Burn" the coupon when they click Order via WhatsApp
-document.getElementById('btn-whatsapp-order').addEventListener('click', function() {
-  if (activeCouponCode) {
-     // delete if create any problem
-     
-     message += `\n🎁 Coupon Applied: ${activeCouponCode}`;
-    message += `\nDiscount: ${activeDiscountValue * 100}%\n`;
-    // Pull the memory list, add the code, and save it back
-    const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
-    if (!burnedCoupons.includes(activeCouponCode)) {
-      burnedCoupons.push(activeCouponCode);
-      localStorage.setItem('farmerBurnedCoupons', JSON.stringify(burnedCoupons));
+var btnWhatsappOrderNode = document.getElementById('btn-whatsapp-order');
+if (btnWhatsappOrderNode) {
+  btnWhatsappOrderNode.addEventListener('click', function() {
+    if (window.activeCouponCode) {
+      // Pull the memory list, add the code, and save it back
+      const burnedCoupons = JSON.parse(localStorage.getItem('farmerBurnedCoupons')) || [];
+      if (!burnedCoupons.includes(window.activeCouponCode)) {
+        burnedCoupons.push(window.activeCouponCode);
+        localStorage.setItem('farmerBurnedCoupons', JSON.stringify(burnedCoupons));
+      }
     }
-  }
-});
+  });
+}
 
 })();
