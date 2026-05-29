@@ -2593,21 +2593,21 @@ body.nav-open {
 
 
 /* ============================================
-   DESI CURSIVE SPLASH SCREEN
+   DESI CURSIVE SPLASH SCREEN (PREMIUM FADE)
    ============================================ */
 .splash-screen {
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background-color: #161210; /* Dark, earthy rustic brown/black */
+  background-color: #0c0a09; /* Deeper, richer black-brown for a premium feel */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.8s var(--ease-spring), opacity 0.8s ease;
+  /* SURGICAL FIX: Changed from sliding to a slow, cinematic fade */
+  transition: opacity 1.5s ease-in-out; 
 }
 
 .splash-screen.hidden {
-  transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
 }
@@ -2616,17 +2616,17 @@ body.nav-open {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
-/* Wheat Animation */
+/* Premium Wheat Animation */
 .splash-wheat {
-  width: 60px;
-  height: 60px;
-  color: #c5a059;
+  width: 65px;
+  height: 65px;
+  color: #D4AF37; /* Richer, true gold */
   opacity: 0;
-  transform: translateY(20px);
-  animation: wheatRise 1s forwards 0.2s;
+  transform: translateY(15px);
+  animation: wheatRise 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.2s;
 }
 
 /* Text Container */
@@ -2634,33 +2634,33 @@ body.nav-open {
   text-align: center;
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 /* Cursive Font Setup */
 .splash-cursive {
   font-family: 'Great Vibes', cursive;
-  font-size: 64px;
+  font-size: 72px; /* Made slightly larger */
   font-weight: 400;
   margin: 0;
   padding: 0;
-  /* Hides the text initially for the sweep effect */
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); 
 }
 
-/* Shining Gold Farmers */
+/* Premium Shining Gold */
 .farmers-text {
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background: linear-gradient(to right, #B38728, #FBF5B7, #D4AF37, #FBF5B7, #AA771C);
   -webkit-background-clip: text;
   color: transparent;
-  animation: writeText 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.5s;
+  text-shadow: 0px 4px 15px rgba(212, 175, 55, 0.3); /* Adds a luxurious gold glow */
+  animation: writeText 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.6s;
 }
 
-/* Earthy Green Pizza */
+/* Premium Earthy Green */
 .pizza-text {
-  color: #4CAF50; /* Desi agricultural green */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  animation: writeText 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.2s; /* Starts after Farmers finishes */
+  color: #2e7d32; /* Deeper, richer agricultural green */
+  text-shadow: 0px 4px 15px rgba(46, 125, 50, 0.4); /* Adds a rich green glow */
+  animation: writeText 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards 1.4s;
 }
 
 /* Animations */
