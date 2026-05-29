@@ -2904,25 +2904,17 @@ body.nav-open {
 
 
 /* ============================================
-   PIZZA IMAGE ENLARGER (Only affects Pizzas!)
+   FOOD IMAGE ENLARGER (Pizza, Burger, Chowmein, Chilli Potato, Sides)
    ============================================ */
 
-/* The [src*="pizza"] tells the browser to ONLY apply this to images with "pizza" in the file name */
-.catalog-grid .catalog-card-media img[src*="pizza"] {
-  object-fit: cover !important; /* Forces the pizza to stretch and fill the entire box */
-  padding: 0 !important; /* Removes the 12px safety padding we added for the shakes */
-  width: 100% !important;
-  height: 100% !important;
-}
-/* ============================================
-   PIZZA & BURGER IMAGE ENLARGER
-   ============================================ */
-
-/* Targets any image with "pizza" OR "burger" in its file name */
+/* Targets any image with these exact words in their file name */
 .catalog-grid .catalog-card-media img[src*="pizza"],
-.catalog-grid .catalog-card-media img[src*="burger"] {
+.catalog-grid .catalog-card-media img[src*="burger"],
+.catalog-grid .catalog-card-media img[src*="chowmein"],
+.catalog-grid .catalog-card-media img[src*="chilli"],
+.catalog-grid .catalog-card-media img[src*="side"] {
   object-fit: cover !important; /* Stretches to fill the box */
-  padding: 0 !important; /* Removes the shake padding */
+  padding: 0 !important; /* Removes the shake/drink padding */
   width: 100% !important;
   height: 100% !important;
 }
