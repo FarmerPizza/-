@@ -2900,3 +2900,17 @@ body.nav-open {
 }
 .coupon-message.success { color: #2e7d32; }
 .coupon-message.error { color: var(--error); }
+
+
+
+/* ============================================
+   PIZZA IMAGE ENLARGER (Only affects Pizzas!)
+   ============================================ */
+
+/* The [src*="pizza"] tells the browser to ONLY apply this to images with "pizza" in the file name */
+.catalog-grid .catalog-card-media img[src*="pizza"] {
+  object-fit: cover !important; /* Forces the pizza to stretch and fill the entire box */
+  padding: 0 !important; /* Removes the 12px safety padding we added for the shakes */
+  width: 100% !important;
+  height: 100% !important;
+}
