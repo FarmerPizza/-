@@ -334,31 +334,46 @@
   }
 
   // ============================================
-  // 10. BUILD WHATSAPP MESSAGE
+  // 10. BUILD WHATSAPP MESSAGE (ULTIMATE VERSION)
   // ============================================
 
   function buildWhatsAppMsg(cart, subtotal, deliveryCharge, total) {
-    // # change whatsapp-message-template here
     var msg = 'Hello ' + SHOP_NAME + '! 🍕\n\nI want to order:\n\n';
 
     cart.forEach(function (item) {
       var cat = item.parent ? ' (' + item.parent + ')' : '';
-      msg += '• ' + item.name + cat + ' × ' + item.qty + ' = ₹' + (item.price * item.qty).toFixed(2) + '\n';
+      
+      // ▼ SURGICAL FIX 1: GRAB UPGRADES & FIX LINE MATH ▼
+      var ext = item.extraCheese || 0;
+      var brst = item.cheeseBurst || 0;
+      var itemTotalCost = item.price + ext + brst;
+      
+      msg += '• ' + item.name + cat + ' × ' + item.qty + ' = ₹' + (itemTotalCost * item.qty).toFixed(2) + '\n';
+      
+      // Print the exact cheese upgrades under the pizza name so the kitchen sees it!
+      if (ext > 0) {
+        msg += '   ↳ + Extra Cheese (+₹' + ext + ')\n';
+      }
+      if (brst > 0) {
+        msg += '   ↳ + Cheese Burst (+₹' + brst + ')\n';
+      }
+      // ▲ END UPGRADE FIX ▲
     });
 
-    if (userLocation) 
-    {
+    // ▼ SURGICAL FIX 2: CLICKABLE GOOGLE MAPS LINK ▼
+    if (userLocation) {
+      msg += '\n📍 *Customer Location:*\nhttps://maps.google.com/?q=' + userLocation.lat + ',' + userLocation.lng;
       msg += '\n📏 Distance: ' + (distanceMeters / 1000).toFixed(2) + ' km';
     }
+    // ▲ END LOCATION FIX ▲
 
     msg += '\n\n*Subtotal:* ₹' + subtotal.toFixed(2);
 
-    // ▼ SURGICAL FIX: ADD COUPON TO WHATSAPP MSG ▼
+    // Coupon Injection
     if (typeof window.activeCouponCode !== 'undefined' && window.activeCouponCode) {
       msg += '\n🎁 *COUPON APPLIED: ' + window.activeCouponCode + '*';
       msg += '\nDiscount: ' + (window.activeDiscountValue * 100) + '% off';
     }
-    // ▲ END WHATSAPP MSG FIX ▲
 
     msg += '\n*Delivery:* ' + (deliveryCharge === 0 ? 'Free' : '₹' + deliveryCharge.toFixed(2));
     msg += '\n*TOTAL: ₹' + total.toFixed(2) + '*';
@@ -366,7 +381,6 @@
 
     return msg;
   }
-
   // ============================================
   // 11. RENDER CART UI (DOM-safe, no innerHTML)
   // ============================================
