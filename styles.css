@@ -2904,7 +2904,7 @@ body.nav-open {
 
 
 /* ============================================
-   FOOD IMAGE ENLARGER (Pizza, Burger, Chowmein, Chilli Potato, Sides)
+   FOOD IMAGE ENLARGER (Pizza, Burger, Chowmein, Chilli/Potato, Sides)
    ============================================ */
 
 /* Targets any image with these exact words in their file name */
@@ -2912,9 +2912,15 @@ body.nav-open {
 .catalog-grid .catalog-card-media img[src*="burger"],
 .catalog-grid .catalog-card-media img[src*="chowmein"],
 .catalog-grid .catalog-card-media img[src*="chilli"],
+.catalog-grid .catalog-card-media img[src*="potato"], 
 .catalog-grid .catalog-card-media img[src*="side"] {
   object-fit: cover !important; /* Stretches to fill the box */
   padding: 0 !important; /* Removes the shake/drink padding */
+  
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;  /* SURGICAL FIX: Breaks the 95% ceiling! */
+  max-height: 100% !important; /* SURGICAL FIX: Breaks the 95% ceiling! */
+  
+  border-radius: 20px 20px 0 0 !important; /* Ensures the top corners stay beautifully round */
 }
