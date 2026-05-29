@@ -900,19 +900,21 @@
         setTimeout(function() {
           splashScreen.classList.add('hidden'); // Triggers the 1.5s cinematic fade out
           
-          // Wait exactly 1.5 seconds for the fade to totally finish BEFORE doing anything else
-          setTimeout(function() {
-            splashScreen.remove(); // Delete splash screen from memory
-            
-            // NOW start the video, after the screen is completely clear
-            if (heroVideo) {
-              heroVideo.play().catch(function(error) {
-                console.log("Video autoplay blocked by browser:", error);
-              });
-            }
-          }, 1500); // 1500ms matches your CSS fade transition
+          // SURGICAL FIX: Start the video right NOW as the fade begins!
+          // This ensures the video is moving beautifully as the darkness fades away.
+          if (heroVideo) {
+            heroVideo.currentTime = 0; // Forces it to start from the exact beginning
+            heroVideo.play().catch(function(error) {
+              console.log("Video autoplay blocked by browser:", error);
+            });
+          }
           
-        }, 3000); // 3 seconds text animation
+          // Wait 1.5 seconds for the fade to finish, then delete the HTML element
+          setTimeout(function() {
+            splashScreen.remove(); 
+          }, 1500); 
+          
+        }, 3000); 
       }
     } else {
       // Fallback if splash screen is missing from HTML
@@ -920,6 +922,6 @@
         heroVideo.play().catch(function(e) { console.log(e); });
       }
     }
-  });  
+  });
 
 })();
