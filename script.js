@@ -593,12 +593,12 @@
       if (distanceMeters > MAX_DELIVERY_DISTANCE) {
         canDeliver = false;
         deliveryText = 'Out of delivery area (> ' + (MAX_DELIVERY_DISTANCE / 1000) + 'km)';
-      } else if (distanceMeters <= 300) {
+      } else if (distanceMeters <= 200) {
         deliveryCharge = 0;
-        deliveryText = 'Free (Under 300m)';
-      } else if (distanceMeters <= 3000 && subtotal > 149) {
+        deliveryText = 'Free (Under 200m)';
+      } else if (distanceMeters <= 200 && subtotal > 299) {
         deliveryCharge = 0;
-        deliveryText = 'Free (Order > ₹149)';
+        deliveryText = 'Free (Order > ₹299)';
       } else {
         deliveryCharge = Math.round(distanceMeters * RATE_PER_METER * 100) / 100;
         deliveryText = '₹' + deliveryCharge.toFixed(2) + ' (' + (distanceMeters / 1000).toFixed(2) + ' km)';
