@@ -875,35 +875,49 @@
     });
   }
 
- // ============================================
-  // 21. PREMIUM SPLASH FADE & VIDEO SYNC
+// ============================================
+  // 21. PREMIUM SPLASH FADE & VIDEO SYNC (FIXED)
   // ============================================
   window.addEventListener('load', function() {
     var splashScreen = document.getElementById('splash-screen');
     var heroVideo = document.getElementById('hero-bg-video'); // Targets your main video
     
+    // Check if the user has already seen the animation this session
+    var hasSeenSplash = sessionStorage.getItem('farmer_splash_seen');
+
     if (splashScreen) {
-      // Keeps the cursive text on screen for exactly 3 seconds
-      setTimeout(function() {
-        splashScreen.classList.add('hidden'); // Triggers the 1.5s cinematic fade out
-        
-        // Starts the background video the exact millisecond the fade begins
+      if (hasSeenSplash === 'true') {
+        // If they already saw it, instantly delete the splash screen and play video
+        splashScreen.remove();
         if (heroVideo) {
-          heroVideo.play().catch(function(error) {
-            console.log("Video autoplay blocked by browser:", error);
-          });
+          heroVideo.play().catch(function(e) { console.log(e); });
         }
-        
-        // Deletes splash screen from memory after the 1.5s fade finishes
+      } else {
+        // If it's their first time, remember it for later
+        sessionStorage.setItem('farmer_splash_seen', 'true');
+
+        // Keep the cursive text on screen for exactly 3 seconds
         setTimeout(function() {
-          splashScreen.remove();
-        }, 1500);
-        
-      }, 3000); 
+          splashScreen.classList.add('hidden'); // Triggers the 1.5s cinematic fade out
+          
+          // Wait exactly 1.5 seconds for the fade to totally finish BEFORE doing anything else
+          setTimeout(function() {
+            splashScreen.remove(); // Delete splash screen from memory
+            
+            // NOW start the video, after the screen is completely clear
+            if (heroVideo) {
+              heroVideo.play().catch(function(error) {
+                console.log("Video autoplay blocked by browser:", error);
+              });
+            }
+          }, 1500); // 1500ms matches your CSS fade transition
+          
+        }, 3000); // 3 seconds text animation
+      }
     } else {
-      // If the user navigates back to index.html and splash screen is gone, play video instantly
+      // Fallback if splash screen is missing from HTML
       if (heroVideo) {
-        heroVideo.play();
+        heroVideo.play().catch(function(e) { console.log(e); });
       }
     }
   });  
