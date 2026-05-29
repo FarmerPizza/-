@@ -184,379 +184,365 @@
         <!-- Product Grid -->
         <div class="catalog-grid" id="catalog-products-grid">
           
-          <!-- Product 1: Cheesy Lover -->
-          <!-- # change pizza-1 details here -->
-          <div class="catalog-card" data-tags="classic veggie">
-            <span class="catalog-card-badge">Hot</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-cheesy-lover.png" alt="Cheesy Lover" />
+          <div class="catalog-grid" id="catalog-products-grid">
+          
+          <div class="catalog-card" data-tags="simply veg classic cheese">
+            <div class="glass-size-overlay" id="overlay-cheesy-lover">
+              <span class="close-overlay" onclick="document.getElementById('overlay-cheesy-lover').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-lover').classList.remove('active')" data-id="pizza_cheesy_lover_reg" data-name="Cheesy Lover (Reg)" data-price="99" data-image="assets/pizza-cheesy-lover.png" data-category="Pizza"><span>Regular</span><span>₹99</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-lover').classList.remove('active')" data-id="pizza_cheesy_lover_med" data-name="Cheesy Lover (Med)" data-price="199" data-image="assets/pizza-cheesy-lover.png" data-category="Pizza"><span>Medium</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-lover').classList.remove('active')" data-id="pizza_cheesy_lover_lrg" data-name="Cheesy Lover (Lrg)" data-price="300" data-image="assets/pizza-cheesy-lover.png" data-category="Pizza"><span>Large</span><span>₹300</span></button>
             </div>
+            <span class="catalog-card-badge">Hot</span>
+            <div class="catalog-card-media"><img src="assets/pizza-cheesy-lover.png" alt="Cheesy Lover" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Cheesy Lover</h3>
-              <span class="catalog-card-price">₹99.00</span>
+              <span class="catalog-card-price">From ₹99.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_cheesy_lover" 
-                      data-name="Cheesy Lover" 
-                      data-price="99.00" 
-                      data-image="assets/pizza-cheesy-lover.png" 
-                      data-tags="classic, veggie"
-                      data-category="Pizza"
-                      aria-label="Add Cheesy Lover to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-cheesy-lover').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               </button>
               <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
-          
 
-          <!-- Product 2: Cheesy & Tomato -->
-          <!-- # change pizza-2 details here -->
-          <div class="catalog-card" data-tags="classic veggie">
-            <span class="catalog-card-badge">Fresh</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-cheesy-tomato.png" alt="Cheesy & Tomato" />
+          <div class="catalog-card" data-tags="simply veg classic tomato">
+            <div class="glass-size-overlay" id="overlay-cheesy-tomato">
+              <span class="close-overlay" onclick="document.getElementById('overlay-cheesy-tomato').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-tomato').classList.remove('active')" data-id="pizza_cheesy_tomato_reg" data-name="Cheesy & Tomato (Reg)" data-price="99" data-image="assets/pizza-cheesy-tomato.png" data-category="Pizza"><span>Regular</span><span>₹99</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-tomato').classList.remove('active')" data-id="pizza_cheesy_tomato_med" data-name="Cheesy & Tomato (Med)" data-price="199" data-image="assets/pizza-cheesy-tomato.png" data-category="Pizza"><span>Medium</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cheesy-tomato').classList.remove('active')" data-id="pizza_cheesy_tomato_lrg" data-name="Cheesy & Tomato (Lrg)" data-price="300" data-image="assets/pizza-cheesy-tomato.png" data-category="Pizza"><span>Large</span><span>₹300</span></button>
             </div>
+            <span class="catalog-card-badge">Fresh</span>
+            <div class="catalog-card-media"><img src="assets/pizza-cheesy-tomato.png" alt="Cheesy & Tomato" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Cheesy & Tomato</h3>
-              <span class="catalog-card-price">₹99.00</span>
+              <span class="catalog-card-price">From ₹99.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_cheesy_tomato" 
-                      data-name="Cheesy & Tomato" 
-                      data-price="99.00" 
-                      data-image="assets/pizza-cheesy-tomato.png" 
-                      data-tags="classic, veggie"
-                      data-category="Pizza"
-                      aria-label="Add Cheesy & Tomato to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-cheesy-tomato').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 3: Spicy Tango Pizza -->
-          <!-- # change pizza-3 details here -->
-          <div class="catalog-card" data-tags="spicy veggie">
-            <span class="catalog-card-badge sale">-5%</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-spicy-tango.png" alt="Spicy Tango Pizza" />
+          <div class="catalog-card" data-tags="veg delight spicy corn">
+            <div class="glass-size-overlay" id="overlay-spicy-tango">
+              <span class="close-overlay" onclick="document.getElementById('overlay-spicy-tango').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-tango').classList.remove('active')" data-id="pizza_spicy_tango_reg" data-name="Spicy Tango (Reg)" data-price="149" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Regular</span><span>₹149</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-tango').classList.remove('active')" data-id="pizza_spicy_tango_med" data-name="Spicy Tango (Med)" data-price="240" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Medium</span><span>₹240</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-tango').classList.remove('active')" data-id="pizza_spicy_tango_lrg" data-name="Spicy Tango (Lrg)" data-price="370" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Large</span><span>₹370</span></button>
             </div>
+            <span class="catalog-card-badge sale">-5%</span>
+            <div class="catalog-card-media"><img src="assets/pizza-spicy-tango.png" alt="Spicy Tango Pizza" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Spicy Tango</h3>
-              <span class="catalog-card-price">₹149.00</span>
+              <span class="catalog-card-price">From ₹149.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_spicy_tango" 
-                      data-name="Spicy Tango Pizza" 
-                      data-price="149.00" 
-                      data-image="assets/pizza-spicy-tango.png" 
-                      data-tags="spicy, veggie"
-                      data-category="Pizza"
-                      aria-label="Add Spicy Tango Pizza to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-spicy-tango').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 4: Double Cheesy Margherita -->
-          <!-- # change pizza-4 details here -->
-          <div class="catalog-card" data-tags="classic veggie">
-            <span class="catalog-card-badge">Hot</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-cheese.png" alt="Double Cheesy Margherita" />
+          <div class="catalog-card" data-tags="veg delight classic cheese">
+            <div class="glass-size-overlay" id="overlay-double-cheesy">
+              <span class="close-overlay" onclick="document.getElementById('overlay-double-cheesy').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-double-cheesy').classList.remove('active')" data-id="pizza_double_cheesy_reg" data-name="Cheesy Margherita (Reg)" data-price="149" data-image="assets/pizza-cheese.png" data-category="Pizza"><span>Regular</span><span>₹149</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-double-cheesy').classList.remove('active')" data-id="pizza_double_cheesy_med" data-name="Cheesy Margherita (Med)" data-price="240" data-image="assets/pizza-cheese.png" data-category="Pizza"><span>Medium</span><span>₹240</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-double-cheesy').classList.remove('active')" data-id="pizza_double_cheesy_lrg" data-name="Cheesy Margherita (Lrg)" data-price="370" data-image="assets/pizza-cheese.png" data-category="Pizza"><span>Large</span><span>₹370</span></button>
             </div>
+            <span class="catalog-card-badge">Hot</span>
+            <div class="catalog-card-media"><img src="assets/pizza-cheese.png" alt="Double Cheesy Margherita" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Cheesy Margherita</h3>
-              <span class="catalog-card-price">₹149.00</span>
+              <span class="catalog-card-price">From ₹149.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_double_cheesy" 
-                      data-name="Double Cheesy Margherita" 
-                      data-price="149.00" 
-                      data-image="assets/pizza-cheese.png" 
-                      data-tags="classic, veggie"
-                      data-category="Pizza"
-                      aria-label="Add Double Cheesy Margherita to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-             
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-double-cheesy').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 5: Farmfresh -->
-          <!-- # change pizza-5 details here -->
-          <div class="catalog-card" data-tags="veggie premium">
-            <span class="catalog-card-badge">-10%</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-veggie.png" alt="Farmfresh Pizza" />
+          <div class="catalog-card" data-tags="veg treat veggie">
+            <div class="glass-size-overlay" id="overlay-farmfresh">
+              <span class="close-overlay" onclick="document.getElementById('overlay-farmfresh').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmfresh').classList.remove('active')" data-id="pizza_farmfresh_reg" data-name="Farmfresh (Reg)" data-price="180" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Regular</span><span>₹180</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmfresh').classList.remove('active')" data-id="pizza_farmfresh_med" data-name="Farmfresh (Med)" data-price="270" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Medium</span><span>₹270</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmfresh').classList.remove('active')" data-id="pizza_farmfresh_lrg" data-name="Farmfresh (Lrg)" data-price="400" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Large</span><span>₹400</span></button>
             </div>
+            <span class="catalog-card-badge">-10%</span>
+            <div class="catalog-card-media"><img src="assets/pizza-veggie.png" alt="Farmfresh Pizza" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Farmfresh</h3>
-              <span class="catalog-card-price">₹180.00</span>
+              <span class="catalog-card-price">From ₹180.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_farmfresh" 
-                      data-name="Farmfresh" 
-                      data-price="180.00" 
-                      data-image="assets/pizza-veggie.png" 
-                      data-tags="veggie, premium"
-                      data-category="Pizza"
-                      aria-label="Add Farmfresh to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-farmfresh').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 6: Paneer Cheesy -->
-          <!-- # change pizza-6 details here -->
-          <div class="catalog-card" data-tags="paneer veggie premium">
-            <span class="catalog-card-badge sale">Best</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-paneer.png" alt="Paneer Cheesy Pizza" />
+          <div class="catalog-card" data-tags="veg treat veggie">
+            <div class="glass-size-overlay" id="overlay-country-fest">
+              <span class="close-overlay" onclick="document.getElementById('overlay-country-fest').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-country-fest').classList.remove('active')" data-id="pizza_country_fest_reg" data-name="Country Fest (Reg)" data-price="180" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Regular</span><span>₹180</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-country-fest').classList.remove('active')" data-id="pizza_country_fest_med" data-name="Country Fest (Med)" data-price="270" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Medium</span><span>₹270</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-country-fest').classList.remove('active')" data-id="pizza_country_fest_lrg" data-name="Country Fest (Lrg)" data-price="400" data-image="assets/pizza-veggie.png" data-category="Pizza"><span>Large</span><span>₹400</span></button>
             </div>
+            <div class="catalog-card-media"><img src="assets/pizza-veggie.png" alt="Country Fest" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Country Fest</h3>
+              <span class="catalog-card-price">From ₹180.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-country-fest').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg treat spicy jalapeno">
+            <div class="glass-size-overlay" id="overlay-mexican-green">
+              <span class="close-overlay" onclick="document.getElementById('overlay-mexican-green').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-mexican-green').classList.remove('active')" data-id="pizza_mexican_green_reg" data-name="Mexican Green (Reg)" data-price="180" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Regular</span><span>₹180</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-mexican-green').classList.remove('active')" data-id="pizza_mexican_green_med" data-name="Mexican Green (Med)" data-price="270" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Medium</span><span>₹270</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-mexican-green').classList.remove('active')" data-id="pizza_mexican_green_lrg" data-name="Mexican Green (Lrg)" data-price="400" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Large</span><span>₹400</span></button>
+            </div>
+            <span class="catalog-card-badge sale">Hot</span>
+            <div class="catalog-card-media"><img src="assets/pizza-spicy-tango.png" alt="Mexican Green Pizza" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Mexican Green</h3>
+              <span class="catalog-card-price">From ₹180.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-mexican-green').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg special paneer premium">
+            <div class="glass-size-overlay" id="overlay-paneer-cheesy">
+              <span class="close-overlay" onclick="document.getElementById('overlay-paneer-cheesy').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-paneer-cheesy').classList.remove('active')" data-id="pizza_paneer_cheesy_reg" data-name="Paneer Cheesy (Reg)" data-price="199" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Regular</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-paneer-cheesy').classList.remove('active')" data-id="pizza_paneer_cheesy_med" data-name="Paneer Cheesy (Med)" data-price="300" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Medium</span><span>₹300</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-paneer-cheesy').classList.remove('active')" data-id="pizza_paneer_cheesy_lrg" data-name="Paneer Cheesy (Lrg)" data-price="450" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Large</span><span>₹450</span></button>
+            </div>
+            <span class="catalog-card-badge sale">Best</span>
+            <div class="catalog-card-media"><img src="assets/pizza-paneer.png" alt="Paneer Cheesy Pizza" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Paneer Cheesy</h3>
-              <span class="catalog-card-price">₹199.00</span>
+              <span class="catalog-card-price">From ₹199.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_paneer_cheesy" 
-                      data-name="Paneer Cheesy" 
-                      data-price="199.00" 
-                      data-image="assets/pizza-paneer.png" 
-                      data-tags="paneer, veggie, premium"
-                      data-category="Pizza"
-                      aria-label="Add Paneer Cheesy to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-paneer-cheesy').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 7: Veggie Lovers -->
-          <!-- # change pizza-7 details here -->
-          <div class="catalog-card" data-tags="veggie paneer premium">
-            <span class="catalog-card-badge">-8%</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-bbq.png" alt="Veggie Lovers Pizza" />
+          <div class="catalog-card" data-tags="veg special paneer spicy">
+            <div class="glass-size-overlay" id="overlay-spicy-paneer">
+              <span class="close-overlay" onclick="document.getElementById('overlay-spicy-paneer').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-paneer').classList.remove('active')" data-id="pizza_spicy_paneer_reg" data-name="Spicy Paneer (Reg)" data-price="199" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Regular</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-paneer').classList.remove('active')" data-id="pizza_spicy_paneer_med" data-name="Spicy Paneer (Med)" data-price="300" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Medium</span><span>₹300</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-paneer').classList.remove('active')" data-id="pizza_spicy_paneer_lrg" data-name="Spicy Paneer (Lrg)" data-price="450" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Large</span><span>₹450</span></button>
             </div>
+            <div class="catalog-card-media"><img src="assets/pizza-paneer.png" alt="Spicy Paneer" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Spicy Paneer</h3>
+              <span class="catalog-card-price">From ₹199.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-spicy-paneer').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg special paneer veggie">
+            <div class="glass-size-overlay" id="overlay-veggie-paneer">
+              <span class="close-overlay" onclick="document.getElementById('overlay-veggie-paneer').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-paneer').classList.remove('active')" data-id="pizza_veggie_paneer_reg" data-name="Veggie Paneer (Reg)" data-price="199" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Regular</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-paneer').classList.remove('active')" data-id="pizza_veggie_paneer_med" data-name="Veggie Paneer (Med)" data-price="300" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Medium</span><span>₹300</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-paneer').classList.remove('active')" data-id="pizza_veggie_paneer_lrg" data-name="Veggie Paneer (Lrg)" data-price="450" data-image="assets/pizza-paneer.png" data-category="Pizza"><span>Large</span><span>₹450</span></button>
+            </div>
+            <div class="catalog-card-media"><img src="assets/pizza-paneer.png" alt="Veggie Paneer" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Veggie Paneer</h3>
+              <span class="catalog-card-price">From ₹199.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-veggie-paneer').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg special veggie premium">
+            <div class="glass-size-overlay" id="overlay-veggie-lovers">
+              <span class="close-overlay" onclick="document.getElementById('overlay-veggie-lovers').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-lovers').classList.remove('active')" data-id="pizza_veggie_lovers_reg" data-name="Veggie Lovers (Reg)" data-price="199" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Regular</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-lovers').classList.remove('active')" data-id="pizza_veggie_lovers_med" data-name="Veggie Lovers (Med)" data-price="300" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Medium</span><span>₹300</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-veggie-lovers').classList.remove('active')" data-id="pizza_veggie_lovers_lrg" data-name="Veggie Lovers (Lrg)" data-price="450" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Large</span><span>₹450</span></button>
+            </div>
+            <span class="catalog-card-badge">-8%</span>
+            <div class="catalog-card-media"><img src="assets/pizza-bbq.png" alt="Veggie Lovers Pizza" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Veggie Lovers</h3>
-              <span class="catalog-card-price">₹199.00</span>
+              <span class="catalog-card-price">From ₹199.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_veggie_lovers" 
-                      data-name="Veggie Lovers" 
-                      data-price="199.00" 
-                      data-image="assets/pizza-bbq.png" 
-                      data-tags="veggie, paneer, premium"
-                      data-category="Pizza"
-                      aria-label="Add Veggie Lovers to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-veggie-lovers').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Product 8: Pizza Farmers Veg Special -->
-          <!-- # change pizza-8 details here -->
-          <div class="catalog-card" data-tags="spicy veggie premium">
-            <span class="catalog-card-badge sale">Special</span>
-            <div class="catalog-card-media">
-              <img src="assets/pizza-margherita.png" alt="Pizza Farmers Veg Special" />
+          <div class="catalog-card" data-tags="veg special spicy capsicum">
+            <div class="glass-size-overlay" id="overlay-spicy-peppers">
+              <span class="close-overlay" onclick="document.getElementById('overlay-spicy-peppers').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-peppers').classList.remove('active')" data-id="pizza_spicy_peppers_reg" data-name="Spicy Peppers (Reg)" data-price="199" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Regular</span><span>₹199</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-peppers').classList.remove('active')" data-id="pizza_spicy_peppers_med" data-name="Spicy Peppers (Med)" data-price="300" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Medium</span><span>₹300</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-spicy-peppers').classList.remove('active')" data-id="pizza_spicy_peppers_lrg" data-name="Spicy Peppers (Lrg)" data-price="450" data-image="assets/pizza-spicy-tango.png" data-category="Pizza"><span>Large</span><span>₹450</span></button>
             </div>
+            <div class="catalog-card-media"><img src="assets/pizza-spicy-tango.png" alt="Spicy Peppers" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Spicy Peppers</h3>
+              <span class="catalog-card-price">From ₹199.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-spicy-peppers').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg special signature premium">
+            <div class="glass-size-overlay" id="overlay-cloud-one">
+              <span class="close-overlay" onclick="document.getElementById('overlay-cloud-one').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cloud-one').classList.remove('active')" data-id="pizza_cloud_one_reg" data-name="Cloud One Pizza (Reg)" data-price="210" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Regular</span><span>₹210</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cloud-one').classList.remove('active')" data-id="pizza_cloud_one_med" data-name="Cloud One Pizza (Med)" data-price="350" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Medium</span><span>₹350</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-cloud-one').classList.remove('active')" data-id="pizza_cloud_one_lrg" data-name="Cloud One Pizza (Lrg)" data-price="520" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Large</span><span>₹520</span></button>
+            </div>
+            <span class="catalog-card-badge">New</span>
+            <div class="catalog-card-media"><img src="assets/pizza-margherita.png" alt="Cloud One Pizza" /></div>
+            <div class="catalog-card-info">
+              <h3 class="catalog-card-title">Cloud One Pizza</h3>
+              <span class="catalog-card-price">From ₹210.00</span>
+            </div>
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-cloud-one').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="catalog-card" data-tags="veg special signature premium">
+            <div class="glass-size-overlay" id="overlay-farmers-special">
+              <span class="close-overlay" onclick="document.getElementById('overlay-farmers-special').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmers-special').classList.remove('active')" data-id="pizza_farmers_special_reg" data-name="Farmers Veg Special (Reg)" data-price="210" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Regular</span><span>₹210</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmers-special').classList.remove('active')" data-id="pizza_farmers_special_med" data-name="Farmers Veg Special (Med)" data-price="350" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Medium</span><span>₹350</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-farmers-special').classList.remove('active')" data-id="pizza_farmers_special_lrg" data-name="Farmers Veg Special (Lrg)" data-price="520" data-image="assets/pizza-margherita.png" data-category="Pizza"><span>Large</span><span>₹520</span></button>
+            </div>
+            <span class="catalog-card-badge sale">Special</span>
+            <div class="catalog-card-media"><img src="assets/pizza-margherita.png" alt="Farmers Veg Special" /></div>
             <div class="catalog-card-info">
               <h3 class="catalog-card-title">Farmers Veg Special</h3>
-              <span class="catalog-card-price">₹210.00</span>
+              <span class="catalog-card-price">From ₹210.00</span>
             </div>
             <div class="catalog-card-actions">
-              <button class="catalog-card-action-btn btn-add-cart" 
-                      data-id="pizza_farmers_special" 
-                      data-name="Pizza Farmers Veg Special" 
-                      data-price="210.00" 
-                      data-image="assets/pizza-margherita.png" 
-                      data-tags="spicy, veggie, premium"
-                      data-category="Pizza"
-                      aria-label="Add Farmers Veg Special to cart">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-farmers-special').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </a>
             </div>
           </div>
-          <!-- Product 6: Onion Pizza -->
-          <!-- # change sides-6 details here -->
-          <div class="catalog-card" data-tags="pizza mania classic veggie">
-            <span class="catalog-card-badge">₹69</span>
-            <div class="catalog-card-media">
-              <img src="assets/sides-garlicbread.png" alt="Onion Pizza" />
-            </div>
-            <div class="catalog-card-info">
-              <h3 class="catalog-card-title">Onion Pizza</h3>
-              <span class="catalog-card-price">₹69.00</span>
-            </div>
-            <button class="catalog-card-action-btn btn-add-cart" 
-                    data-id="sides_onion_pizza" 
-                    data-name="Onion Pizza (Pizza Mania)" 
-                    data-price="69.00" 
-                    data-image="assets/sides-garlicbread.png" 
-                    data-tags="pizza mania, classic, veggie"
-                    data-category="Sides"
-                    aria-label="Add Onion Pizza to cart">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
 
-          <!-- Product 7: Tomato Pizza -->
-          <!-- # change sides-7 details here -->
-          <div class="catalog-card" data-tags="pizza mania classic veggie">
-            <span class="catalog-card-badge">₹69</span>
-            <div class="catalog-card-media">
-              <img src="assets/sides-garlicbread.png" alt="Tomato Pizza" />
+          <div class="catalog-card" data-tags="veg special veggie premium">
+            <div class="glass-size-overlay" id="overlay-premium-veggie">
+              <span class="close-overlay" onclick="document.getElementById('overlay-premium-veggie').classList.remove('active')">×</span>
+              <h4 class="glass-title">Select Size</h4>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-premium-veggie').classList.remove('active')" data-id="pizza_premium_veggie_reg" data-name="Premium Veggie Lovers (Reg)" data-price="210" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Regular</span><span>₹210</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-premium-veggie').classList.remove('active')" data-id="pizza_premium_veggie_med" data-name="Premium Veggie Lovers (Med)" data-price="350" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Medium</span><span>₹350</span></button>
+              <button class="btn-add-cart glass-btn" onclick="document.getElementById('overlay-premium-veggie').classList.remove('active')" data-id="pizza_premium_veggie_lrg" data-name="Premium Veggie Lovers (Lrg)" data-price="520" data-image="assets/pizza-bbq.png" data-category="Pizza"><span>Large</span><span>₹520</span></button>
             </div>
+            <span class="catalog-card-badge sale">Best</span>
+            <div class="catalog-card-media"><img src="assets/pizza-bbq.png" alt="Premium Veggie Lovers" /></div>
             <div class="catalog-card-info">
-              <h3 class="catalog-card-title">Tomato Pizza</h3>
-              <span class="catalog-card-price">₹69.00</span>
+              <h3 class="catalog-card-title">Premium Veggie Lovers</h3>
+              <span class="catalog-card-price">From ₹210.00</span>
             </div>
-            <button class="catalog-card-action-btn btn-add-cart" 
-                    data-id="sides_tomato_pizza" 
-                    data-name="Tomato Pizza (Pizza Mania)" 
-                    data-price="69.00" 
-                    data-image="assets/sides-garlicbread.png" 
-                    data-tags="pizza mania, classic, veggie"
-                    data-category="Sides"
-                    aria-label="Add Tomato Pizza to cart">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Product 8: Corn Pizza -->
-          <!-- # change sides-8 details here -->
-          <div class="catalog-card" data-tags="pizza mania classic veggie">
-            <span class="catalog-card-badge">₹69</span>
-            <div class="catalog-card-media">
-              <img src="assets/sides-garlicbread.png" alt="Corn Pizza" />
+            <div class="catalog-card-actions">
+              <button class="catalog-card-action-btn trigger-size-btn" onclick="document.getElementById('overlay-premium-veggie').classList.add('active')" aria-label="Select Size">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+              <a href="index.html" class="catalog-home-btn-inline" aria-label="Go to Home">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </a>
             </div>
-            <div class="catalog-card-info">
-              <h3 class="catalog-card-title">Corn Pizza</h3>
-              <span class="catalog-card-price">₹69.00</span>
-            </div>
-            <button class="catalog-card-action-btn btn-add-cart" 
-                    data-id="sides_corn_pizza" 
-                    data-name="Corn Pizza (Pizza Mania)" 
-                    data-price="69.00" 
-                    data-image="assets/sides-garlicbread.png" 
-                    data-tags="pizza mania, classic, veggie"
-                    data-category="Sides"
-                    aria-label="Add Corn Pizza to cart">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Product 9: Onion & Paneer Pizza -->
-          <!-- # change sides-9 details here -->
-          <div class="catalog-card" data-tags="pizza mania paneer veggie">
-            <span class="catalog-card-badge">Best</span>
-            <div class="catalog-card-media">
-              <img src="assets/sides-garlicbread.png" alt="Onion & Paneer Pizza" />
-            </div>
-            <div class="catalog-card-info">
-              <h3 class="catalog-card-title">Onion & Paneer</h3>
-              <span class="catalog-card-price">₹99.00</span>
-            </div>
-            <button class="catalog-card-action-btn btn-add-cart" 
-                    data-id="sides_onion_paneer_pizza" 
-                    data-name="Onion & Paneer Pizza (Pizza Mania)" 
-                    data-price="99.00" 
-                    data-image="assets/sides-garlicbread.png" 
-                    data-tags="pizza mania, paneer, veggie"
-                    data-category="Sides"
-                    aria-label="Add Onion & Paneer Pizza to cart">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Product 10: Jalapeno & Onion Pizza -->
-          <!-- # change sides-10 details here -->
-          <div class="catalog-card" data-tags="pizza mania spicy veggie">
-            <span class="catalog-card-badge sale">Hot</span>
-            <div class="catalog-card-media">
-              <img src="assets/sides-garlicbread.png" alt="Jalapeno & Onion Pizza" />
-            </div>
-            <div class="catalog-card-info">
-              <h3 class="catalog-card-title">Jalapeno & Onion</h3>
-              <span class="catalog-card-price">₹99.00</span>
-            </div>
-            <button class="catalog-card-action-btn btn-add-cart" 
-                    data-id="sides_jalapeno_onion_pizza" 
-                    data-name="Jalapeno & Onion Pizza (Pizza Mania)" 
-                    data-price="99.00" 
-                    data-image="assets/sides-garlicbread.png" 
-                    data-tags="pizza mania, spicy, veggie"
-                    data-category="Sides"
-                    aria-label="Add Jalapeno & Onion Pizza to cart">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
           </div>
 
         </div>
-      </div>
-
-        </div>
-      </div>
-
       <!-- Floating Bottom Capsule Bar (Home button removed, only cart & wishlist) -->
       <div class="catalog-bottom-bar">
         <div class="catalog-bottom-capsule">
