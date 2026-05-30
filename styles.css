@@ -8,6 +8,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 
+
+/* ============================================
+   FORCE PREMIUM BEIGE ACROSS ALL CONTAINERS
+   ============================================ */
+body, 
+.header,          /* Assuming this is your top nav class */
+.top-nav,         
+.categories-row,  /* Assuming this is the class for the round buttons */
+.main-wrapper {
+  background-color: #E8DCD0 !important; 
+}
 /* ============================================
    PREMIUM BEIGE/CREAM AESTHETIC BACKGROUND
    ============================================ */
