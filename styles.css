@@ -2997,3 +2997,62 @@ body,
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* ============================================
+   LIGHTER BACKGROUND FOR MAIN CATALOG AREA
+   ============================================ */
+/* Look for the class that wraps your entire pizza list section. 
+   It might be one of these: */
+.catalog-screen, 
+.catalog-page-wrapper,
+.main-content,
+main {
+  background-color: #F4EDE7 !important; /* Change to #F9F6F0 if you want it even lighter! */
+  
+  /* Optional: Adds a tiny bit of rounding to the top of this section 
+     so it looks like a clean sheet sliding under the sticky nav */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+
+/* ============================================
+   VIBRANT CARD ACCENTS (PREMIUM AESTHETIC)
+   ============================================ */
+
+/* 1. Keep the card pure white, but give it a softer, more elegant shadow */
+.catalog-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid transparent; /* Prep for hover effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* 2. When the user touches or hovers over the card, it lifts up and glows slightly */
+.catalog-card:hover, 
+.catalog-card:active {
+  transform: translateY(-4px);
+  border: 1px solid #E63946 !important; /* Vibrant Red Border */
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.15) !important; /* Vibrant Red Shadow */
+}
+
+/* 3. Make the Price text pop */
+.catalog-card .price {
+  color: #D62828 !important; /* A slightly deeper red for readability */
+  font-weight: 700 !important;
+}
+
+/* 4. Upgrade the "+ ADD" button to be the vibrant centerpiece */
+.catalog-card .add-btn { /* Change .add-btn to whatever your button class is! */
+  background-color: #E63946 !important; 
+  color: #FFFFFF !important;
+  border-radius: 25px; /* Pill shape looks more premium */
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+/* Make the button "click" when pressed */
+.catalog-card .add-btn:active {
+  transform: scale(0.95);
+}
