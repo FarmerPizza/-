@@ -6,6 +6,29 @@
 /* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+/* ============================================
+   PREMIUM BEIGE/CREAM AESTHETIC BACKGROUND
+   ============================================ */
+body, 
+.catalog-screen, 
+.catalog-page-wrapper,
+.cart-sidebar,
+.nav-sidebar {
+  background-color: #E8DCD0 !important; /* Change this hex code if you want to try the other two */
+}
+
+/* 
+  CRITICAL: You must force the product cards to stay pure white. 
+  If the cards blend into the beige background, it looks cheap. 
+  White cards on a beige background look expensive. 
+*/
+.catalog-card {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
 /* ============================================
    1. DESIGN TOKENS (CSS Custom Properties)
    ============================================ */
