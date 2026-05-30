@@ -2955,3 +2955,45 @@ body.nav-open {
   object-fit: contain !important; 
   padding: 12px !important; 
 }
+
+/* ============================================
+   PREMIUM BEIGE AESTHETIC BACKGROUND
+   ============================================ */
+body, 
+.site-header, 
+.category-nav,
+.nav-sidebar,
+.process-section {
+  background-color: #E8DCD0 !important; 
+}
+
+/* Force white product cards so they pop against the beige */
+.catalog-card {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ============================================
+   STICKY ROUND CATEGORY BUTTONS
+   ============================================ */
+.category-nav {
+  position: -webkit-sticky !important; /* For Apple devices */
+  position: sticky !important;
+  
+  /* ⚠️ ADJUST THIS NUMBER: This is the distance from the very top of the screen. 
+     If the top nav bar is exactly 60px tall, this makes the round buttons stick right below it. 
+     If there is a gap, make the number smaller. If they overlap, make it bigger! */
+  top: 60px !important; 
+  
+  z-index: 99 !important; /* Keeps it hovering above the scrolling images */
+  
+  /* Solid background is mandatory here so scrolling content doesn't bleed through */
+  background-color: #E8DCD0 !important; 
+  
+  /* A subtle luxury shadow below the sticky row */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important; 
+  
+  /* Slight padding to keep it looking clean while floating */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
